@@ -42,69 +42,92 @@ namespace WindowsFormsApp2
             // 
             // panelTop
             // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(10, 132, 255);
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.panelTop.Controls.Add(this.lblTitle);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Height = 64;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(800, 64);
+            this.panelTop.TabIndex = 2;
             // 
             // lblTitle
             // 
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(16, 16);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(400, 32);
+            this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Dashboard";
             // 
             // panelNav
             // 
-            this.panelNav.BackColor = System.Drawing.Color.FromArgb(245, 247, 250);
-            this.panelNav.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelNav.Width = 180;
-            this.panelNav.Padding = new System.Windows.Forms.Padding(12);
+            this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.panelNav.Controls.Add(this.btnLogout);
             this.panelNav.Controls.Add(this.btnReports);
             this.panelNav.Controls.Add(this.btnInventory);
             this.panelNav.Controls.Add(this.btnSales);
-            // 
-            // btnSales
-            // 
-            this.btnSales.Location = new System.Drawing.Point(12, 20);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(156, 36);
-            this.btnSales.Text = "Sales";
-            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
-            // 
-            // btnInventory
-            // 
-            this.btnInventory.Location = new System.Drawing.Point(12, 68);
-            this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(156, 36);
-            this.btnInventory.Text = "Inventory";
-            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
-            // 
-            // btnReports
-            // 
-            this.btnReports.Location = new System.Drawing.Point(12, 116);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(156, 36);
-            this.btnReports.Text = "Reports";
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            this.panelNav.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelNav.Location = new System.Drawing.Point(0, 64);
+            this.panelNav.Name = "panelNav";
+            this.panelNav.Padding = new System.Windows.Forms.Padding(12);
+            this.panelNav.Size = new System.Drawing.Size(180, 386);
+            this.panelNav.TabIndex = 1;
             // 
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(12, 320);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(156, 36);
+            this.btnLogout.TabIndex = 0;
             this.btnLogout.Text = "Logout";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // btnReports
+            // 
+            this.btnReports.Location = new System.Drawing.Point(9, 137);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(156, 36);
+            this.btnReports.TabIndex = 1;
+            this.btnReports.Text = "Reports";
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.Location = new System.Drawing.Point(12, 68);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(156, 36);
+            this.btnInventory.TabIndex = 2;
+            this.btnInventory.Text = "Inventory";
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
+            // 
+            // btnSales
+            // 
+            this.btnSales.Location = new System.Drawing.Point(12, 20);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(156, 36);
+            this.btnSales.TabIndex = 3;
+            this.btnSales.Text = "Sales";
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
+            // 
             // panelMain
             // 
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Padding = new System.Windows.Forms.Padding(24);
             this.panelMain.Controls.Add(this.lblStatus);
             this.panelMain.Controls.Add(this.lblWelcome);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(180, 64);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Padding = new System.Windows.Forms.Padding(24);
+            this.panelMain.Size = new System.Drawing.Size(620, 386);
+            this.panelMain.TabIndex = 0;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Location = new System.Drawing.Point(24, 64);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(520, 20);
+            this.lblStatus.TabIndex = 0;
+            this.lblStatus.Text = "Status";
             // 
             // lblWelcome
             // 
@@ -112,14 +135,8 @@ namespace WindowsFormsApp2
             this.lblWelcome.Location = new System.Drawing.Point(24, 24);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(520, 30);
+            this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome, User";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Location = new System.Drawing.Point(24, 64);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(520, 20);
-            this.lblStatus.Text = "Status";
             // 
             // HomeForm
             // 
@@ -135,6 +152,7 @@ namespace WindowsFormsApp2
             this.panelNav.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
     }
 }
