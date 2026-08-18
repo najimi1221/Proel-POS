@@ -57,5 +57,10 @@ namespace WindowsFormsApp2
         {
             Application.Exit();
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

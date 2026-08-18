@@ -62,9 +62,9 @@
             // 
             this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblBrand.ForeColor = System.Drawing.Color.White;
-            this.lblBrand.Location = new System.Drawing.Point(20, 220);
+            this.lblBrand.Location = new System.Drawing.Point(77, 218);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(280, 80);
+            this.lblBrand.Size = new System.Drawing.Size(162, 80);
             this.lblBrand.TabIndex = 1;
             this.lblBrand.Text = "POS System";
             // 
@@ -149,6 +149,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(400, 23);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblUsername
             // 
@@ -171,10 +172,10 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBoxLogo.Image = global::WindowsFormsApp2.Properties.Resources.cat_thumbs_up_thumbs_up_cat1;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(40, 40);
+            this.pictureBoxLogo.Image = global::WindowsFormsApp2.Properties.Resources.employee_png;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(83, 71);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(240, 160);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(156, 124);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
@@ -182,7 +183,7 @@
             // Form1
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelRight);
