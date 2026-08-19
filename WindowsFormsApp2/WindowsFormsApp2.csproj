@@ -107,5 +107,8 @@
   <ItemGroup>
     <None Include="Resources\cat-thumbs-up-thumbs-up-cat1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\PosDatabase.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
