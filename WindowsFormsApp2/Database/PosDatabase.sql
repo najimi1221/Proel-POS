@@ -21,5 +21,3 @@ VALUES
 ('Burger', 'Food', 99.00, 10),
 ('French Fries', 'Food', 65.00, 25),
 ('Potato Chips', 'Snacks', 35.00, 30);
-
-select * from Products

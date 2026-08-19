@@ -16,24 +16,16 @@ namespace WindowsFormsApp2
 
         string connectionString =
             "Data Source=JEBBY\\SQLEXPRESS;Initial Catalog=PosDatabase;Integrated Security=True;TrustServerCertificate=True";
+        
         public InventoryForm()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void InventoryForm_Load(object sender, EventArgs e)
         {
-
+            LoadProducts();
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            HomeForm homeForm = new HomeForm("admin");
-            homeForm.Show();
-            this.Hide();
-
-        }
-
         private void LoadProducts()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -50,9 +42,19 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void InventoryForm_Load(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            LoadProducts();
+
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = new HomeForm("admin");
+            homeForm.Show();
+            this.Hide();
+
+        }
+
+
     }
 }

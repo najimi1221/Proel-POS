@@ -15,6 +15,14 @@ namespace WindowsFormsApp2
             lblStatus.Text = $"Signed in: {DateTime.Now:G}";
         }
 
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            InventoryForm inventoryForm = new InventoryForm();
+            inventoryForm.Show();
+            this.Hide();
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Form1 form = new Form1();
@@ -22,13 +30,6 @@ namespace WindowsFormsApp2
             this.Close();
         }
 
-        private void btnInventory_Click(object sender, EventArgs e)
-        {
-            InventoryForm inventoryForm = new InventoryForm();
-            inventoryForm.Show();
-            this.Hide();
-
-
-        }
+        
     }
 }
