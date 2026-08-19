@@ -123,6 +123,7 @@ namespace WindowsFormsApp2
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "HomeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS - Dashboard";
             this.panelTop.ResumeLayout(false);
             this.panelNav.ResumeLayout(false);
