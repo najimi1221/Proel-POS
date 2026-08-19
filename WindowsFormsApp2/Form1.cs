@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -23,18 +25,15 @@ namespace WindowsFormsApp2
             var user = txtUsername.Text.Trim();
             var pass = txtPassword.Text;
 
-            // Simple hard-coded validation for demo. Replace with real auth.
+
             if (string.Equals(user, "admin", StringComparison.OrdinalIgnoreCase) && pass == "password")
             {
+                HomeForm homeForm = new HomeForm(user);
+                homeForm.Show();
+
                 this.Hide();
-                using (var home = new HomeForm(user))
-                {
-                    home.ShowDialog();
-                }
-                // Return to login after HomeForm closes
-                txtPassword.Text = string.Empty;
-                this.Show();
-                txtUsername.Focus();
+
+   
             }
             else
             {

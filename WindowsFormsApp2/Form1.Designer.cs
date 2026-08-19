@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.lblBrand = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
             this.linkExit = new System.Windows.Forms.LinkLabel();
@@ -40,10 +41,9 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelLeft.SuspendLayout();
-            this.panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.panelRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -57,6 +57,17 @@
             this.panelLeft.Padding = new System.Windows.Forms.Padding(20);
             this.panelLeft.Size = new System.Drawing.Size(320, 450);
             this.panelLeft.TabIndex = 1;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pictureBoxLogo.Image = global::WindowsFormsApp2.Properties.Resources.cat_thumbs_up_thumbs_up_cat1;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(40, 40);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(240, 160);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // lblBrand
             // 
@@ -131,7 +142,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(32, 172);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(400, 23);
+            this.txtPassword.Size = new System.Drawing.Size(400, 27);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -147,7 +158,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(32, 108);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(400, 23);
+            this.txtUsername.Size = new System.Drawing.Size(400, 27);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
@@ -191,11 +202,12 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS - Login";
             this.panelLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelRight.ResumeLayout(false);
             this.panelRight.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

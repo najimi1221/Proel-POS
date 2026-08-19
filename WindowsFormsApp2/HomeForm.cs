@@ -15,25 +15,21 @@ namespace WindowsFormsApp2
             lblStatus.Text = $"Signed in: {DateTime.Now:G}";
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            // Close dashboard to return to login form
-            this.Close();
-        }
-
-        private void btnSales_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Open Sales module (not implemented)", "Sales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Open Inventory module (not implemented)", "Inventory", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            InventoryForm inventoryForm = new InventoryForm();
+            inventoryForm.Show();
+            this.Hide();
         }
 
-        private void btnReports_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Open Reports module (not implemented)", "Reports", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Form1 form = new Form1();
+            form.Show();
+            this.Close();
         }
+
+        
     }
 }
