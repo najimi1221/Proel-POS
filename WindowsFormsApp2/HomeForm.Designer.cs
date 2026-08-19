@@ -7,9 +7,7 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Panel panelNav;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblStatus;
@@ -29,9 +27,7 @@ namespace WindowsFormsApp2
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelNav = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnReports = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
-            this.btnSales = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
@@ -64,9 +60,7 @@ namespace WindowsFormsApp2
             // 
             this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.panelNav.Controls.Add(this.btnLogout);
-            this.panelNav.Controls.Add(this.btnReports);
             this.panelNav.Controls.Add(this.btnInventory);
-            this.panelNav.Controls.Add(this.btnSales);
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNav.Location = new System.Drawing.Point(0, 64);
             this.panelNav.Name = "panelNav";
@@ -83,32 +77,14 @@ namespace WindowsFormsApp2
             this.btnLogout.Text = "Logout";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnReports
-            // 
-            this.btnReports.Location = new System.Drawing.Point(9, 137);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(156, 36);
-            this.btnReports.TabIndex = 1;
-            this.btnReports.Text = "Reports";
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
-            // 
             // btnInventory
             // 
-            this.btnInventory.Location = new System.Drawing.Point(12, 68);
+            this.btnInventory.Location = new System.Drawing.Point(12, 24);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(156, 36);
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
-            // 
-            // btnSales
-            // 
-            this.btnSales.Location = new System.Drawing.Point(12, 20);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(156, 36);
-            this.btnSales.TabIndex = 3;
-            this.btnSales.Text = "Sales";
-            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // panelMain
             // 
