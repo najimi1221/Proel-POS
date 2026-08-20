@@ -43,23 +43,21 @@
             // 
             // panelTop
             // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.panelTop.Controls.Add(this.lblInventory);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1067, 79);
+            this.panelTop.Size = new System.Drawing.Size(800, 64);
             this.panelTop.TabIndex = 3;
             // 
             // lblInventory
             // 
             this.lblInventory.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblInventory.ForeColor = System.Drawing.Color.White;
-            this.lblInventory.Location = new System.Drawing.Point(21, 20);
-            this.lblInventory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInventory.Location = new System.Drawing.Point(16, 16);
             this.lblInventory.Name = "lblInventory";
-            this.lblInventory.Size = new System.Drawing.Size(533, 39);
+            this.lblInventory.Size = new System.Drawing.Size(400, 32);
             this.lblInventory.TabIndex = 0;
             this.lblInventory.Text = "Inventory";
             // 
@@ -71,47 +69,42 @@
             this.panelNav.Controls.Add(this.btnBack);
             this.panelNav.Controls.Add(this.btnAdd);
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelNav.Location = new System.Drawing.Point(0, 79);
-            this.panelNav.Margin = new System.Windows.Forms.Padding(4);
+            this.panelNav.Location = new System.Drawing.Point(0, 64);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Padding = new System.Windows.Forms.Padding(16, 15, 16, 15);
-            this.panelNav.Size = new System.Drawing.Size(240, 475);
+            this.panelNav.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.panelNav.Size = new System.Drawing.Size(180, 386);
             this.panelNav.TabIndex = 4;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(16, 133);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(12, 108);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(208, 44);
+            this.btnDelete.Size = new System.Drawing.Size(156, 36);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(16, 81);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Location = new System.Drawing.Point(12, 66);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(208, 44);
+            this.btnEdit.Size = new System.Drawing.Size(156, 36);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(16, 394);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(12, 320);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(208, 44);
+            this.btnBack.Size = new System.Drawing.Size(156, 36);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(16, 30);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(12, 24);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(208, 44);
+            this.btnAdd.Size = new System.Drawing.Size(156, 36);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -119,22 +112,20 @@
             // dgvInventory
             // 
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(296, 108);
-            this.dgvInventory.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvInventory.Location = new System.Drawing.Point(406, 88);
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.RowHeadersWidth = 51;
-            this.dgvInventory.Size = new System.Drawing.Size(755, 409);
+            this.dgvInventory.Size = new System.Drawing.Size(382, 332);
             this.dgvInventory.TabIndex = 5;
             // 
             // InventoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.panelNav);
             this.Controls.Add(this.panelTop);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InventoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS - Inventory";
