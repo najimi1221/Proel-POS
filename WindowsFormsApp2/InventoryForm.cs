@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.Linq;
+using WindowsFormsApp2.Database;
 
 namespace WindowsFormsApp2
 {
     public partial class InventoryForm : Form
     {
-
+        DataClasses1DataContext productsData = new DataClasses1DataContext();
         public InventoryForm()
         {
             InitializeComponent();
@@ -25,7 +27,10 @@ namespace WindowsFormsApp2
         }
         private void LoadProducts()
         {
-          
+            productsData = new DataClasses1DataContext();
+
+            dgvInventory.DataSource = productsData.Products;
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

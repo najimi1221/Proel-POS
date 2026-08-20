@@ -28,56 +28,24 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.panelRight = new System.Windows.Forms.Panel();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.linkExit = new System.Windows.Forms.LinkLabel();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.lblBrand = new System.Windows.Forms.Label();
-            this.panelRight = new System.Windows.Forms.Panel();
-            this.linkExit = new System.Windows.Forms.LinkLabel();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.panelRight.SuspendLayout();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            this.panelRight.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelLeft
-            // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.panelLeft.Controls.Add(this.pictureBoxLogo);
-            this.panelLeft.Controls.Add(this.lblBrand);
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Padding = new System.Windows.Forms.Padding(20);
-            this.panelLeft.Size = new System.Drawing.Size(320, 450);
-            this.panelLeft.TabIndex = 1;
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBoxLogo.Image = global::WindowsFormsApp2.Properties.Resources.employee_png;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(83, 71);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(156, 124);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
-            // 
-            // lblBrand
-            // 
-            this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblBrand.ForeColor = System.Drawing.Color.White;
-            this.lblBrand.Location = new System.Drawing.Point(83, 218);
-            this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(156, 80);
-            this.lblBrand.TabIndex = 1;
-            this.lblBrand.Text = "POS System";
             // 
             // panelRight
             // 
@@ -95,26 +63,40 @@
             this.panelRight.Location = new System.Drawing.Point(320, 0);
             this.panelRight.Name = "panelRight";
             this.panelRight.Padding = new System.Windows.Forms.Padding(32);
-            this.panelRight.Size = new System.Drawing.Size(480, 450);
+            this.panelRight.Size = new System.Drawing.Size(362, 450);
             this.panelRight.TabIndex = 0;
             // 
-            // linkExit
+            // lblUsername
             // 
-            this.linkExit.LinkColor = System.Drawing.Color.Red;
-            this.linkExit.Location = new System.Drawing.Point(32, 278);
-            this.linkExit.Name = "linkExit";
-            this.linkExit.Size = new System.Drawing.Size(100, 20);
-            this.linkExit.TabIndex = 4;
-            this.linkExit.TabStop = true;
-            this.linkExit.Text = "Exit";
-            this.linkExit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkExit_LinkClicked);
+            this.lblUsername.Location = new System.Drawing.Point(32, 88);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(400, 18);
+            this.lblUsername.TabIndex = 7;
+            this.lblUsername.Text = "Username";
             // 
-            // lblMessage
+            // txtUsername
             // 
-            this.lblMessage.Location = new System.Drawing.Point(32, 272);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(400, 36);
-            this.lblMessage.TabIndex = 5;
+            this.txtUsername.Location = new System.Drawing.Point(32, 108);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(141, 27);
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.Location = new System.Drawing.Point(32, 152);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(400, 18);
+            this.lblPassword.TabIndex = 6;
+            this.lblPassword.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(32, 172);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(141, 27);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnClear
             // 
@@ -139,37 +121,23 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // txtPassword
+            // linkExit
             // 
-            this.txtPassword.Location = new System.Drawing.Point(32, 172);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(141, 23);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.linkExit.LinkColor = System.Drawing.Color.Red;
+            this.linkExit.Location = new System.Drawing.Point(28, 320);
+            this.linkExit.Name = "linkExit";
+            this.linkExit.Size = new System.Drawing.Size(100, 20);
+            this.linkExit.TabIndex = 4;
+            this.linkExit.TabStop = true;
+            this.linkExit.Text = "Exit";
+            this.linkExit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkExit_LinkClicked);
             // 
-            // lblPassword
+            // lblMessage
             // 
-            this.lblPassword.Location = new System.Drawing.Point(32, 152);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(400, 18);
-            this.lblPassword.TabIndex = 6;
-            this.lblPassword.Text = "Password";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(32, 108);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(141, 23);
-            this.txtUsername.TabIndex = 0;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.Location = new System.Drawing.Point(32, 88);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(400, 18);
-            this.lblUsername.TabIndex = 7;
-            this.lblUsername.Text = "Username";
+            this.lblMessage.Location = new System.Drawing.Point(32, 272);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(400, 36);
+            this.lblMessage.TabIndex = 5;
             // 
             // lblTitle
             // 
@@ -181,23 +149,59 @@
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Sign in to continue";
             // 
+            // panelLeft
+            // 
+            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.panelLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLeft.BackgroundImage")));
+            this.panelLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelLeft.Controls.Add(this.pictureBoxLogo);
+            this.panelLeft.Controls.Add(this.lblBrand);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Padding = new System.Windows.Forms.Padding(20);
+            this.panelLeft.Size = new System.Drawing.Size(320, 450);
+            this.panelLeft.TabIndex = 1;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLogo.BackgroundImage = global::WindowsFormsApp2.Properties.Resources._3135715;
+            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(83, 71);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(156, 144);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
+            // 
+            // lblBrand
+            // 
+            this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblBrand.ForeColor = System.Drawing.Color.White;
+            this.lblBrand.Location = new System.Drawing.Point(83, 218);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(156, 80);
+            this.lblBrand.TabIndex = 1;
+            this.lblBrand.Text = "POS System";
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(682, 450);
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelLeft);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.MinimumSize = new System.Drawing.Size(800, 450);
+            this.MinimumSize = new System.Drawing.Size(700, 450);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS - Login";
-            this.panelLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelRight.ResumeLayout(false);
             this.panelRight.PerformLayout();
+            this.panelLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
