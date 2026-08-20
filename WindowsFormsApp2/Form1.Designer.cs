@@ -61,10 +61,10 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBoxLogo.Image = global::WindowsFormsApp2.Properties.Resources.cat_thumbs_up_thumbs_up_cat1;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(40, 40);
+            this.pictureBoxLogo.Image = global::WindowsFormsApp2.Properties.Resources.employee_png;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(83, 71);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(240, 160);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(156, 124);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
@@ -73,23 +73,23 @@
             // 
             this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblBrand.ForeColor = System.Drawing.Color.White;
-            this.lblBrand.Location = new System.Drawing.Point(77, 218);
+            this.lblBrand.Location = new System.Drawing.Point(83, 218);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(162, 80);
+            this.lblBrand.Size = new System.Drawing.Size(156, 80);
             this.lblBrand.TabIndex = 1;
             this.lblBrand.Text = "POS System";
             // 
             // panelRight
             // 
             this.panelRight.BackColor = System.Drawing.Color.White;
-            this.panelRight.Controls.Add(this.linkExit);
-            this.panelRight.Controls.Add(this.lblMessage);
+            this.panelRight.Controls.Add(this.lblUsername);
+            this.panelRight.Controls.Add(this.txtUsername);
+            this.panelRight.Controls.Add(this.lblPassword);
+            this.panelRight.Controls.Add(this.txtPassword);
             this.panelRight.Controls.Add(this.btnClear);
             this.panelRight.Controls.Add(this.btnLogin);
-            this.panelRight.Controls.Add(this.txtPassword);
-            this.panelRight.Controls.Add(this.lblPassword);
-            this.panelRight.Controls.Add(this.txtUsername);
-            this.panelRight.Controls.Add(this.lblUsername);
+            this.panelRight.Controls.Add(this.linkExit);
+            this.panelRight.Controls.Add(this.lblMessage);
             this.panelRight.Controls.Add(this.lblTitle);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRight.Location = new System.Drawing.Point(320, 0);
@@ -100,7 +100,8 @@
             // 
             // linkExit
             // 
-            this.linkExit.Location = new System.Drawing.Point(32, 332);
+            this.linkExit.LinkColor = System.Drawing.Color.Red;
+            this.linkExit.Location = new System.Drawing.Point(32, 278);
             this.linkExit.Name = "linkExit";
             this.linkExit.Size = new System.Drawing.Size(100, 20);
             this.linkExit.TabIndex = 4;
@@ -117,9 +118,9 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(252, 220);
+            this.btnClear.Location = new System.Drawing.Point(112, 219);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(180, 36);
+            this.btnClear.Size = new System.Drawing.Size(61, 28);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -130,9 +131,9 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(32, 220);
+            this.btnLogin.Location = new System.Drawing.Point(32, 218);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(180, 36);
+            this.btnLogin.Size = new System.Drawing.Size(61, 29);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Sign In";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -142,7 +143,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(32, 172);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(400, 27);
+            this.txtPassword.Size = new System.Drawing.Size(141, 23);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -158,7 +159,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(32, 108);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(400, 27);
+            this.txtUsername.Size = new System.Drawing.Size(141, 23);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
@@ -179,17 +180,6 @@
             this.lblTitle.Size = new System.Drawing.Size(400, 36);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Sign in to continue";
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBoxLogo.Image = global::WindowsFormsApp2.Properties.Resources.employee_png;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(83, 71);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(156, 124);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
             // 
             // Form1
             // 
