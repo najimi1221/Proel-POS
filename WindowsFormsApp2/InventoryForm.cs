@@ -14,9 +14,6 @@ namespace WindowsFormsApp2
     public partial class InventoryForm : Form
     {
 
-        string connectionString =
-            "Data Source=JEBBY\\SQLEXPRESS;Initial Catalog=PosDatabase;Integrated Security=True;TrustServerCertificate=True";
-        
         public InventoryForm()
         {
             InitializeComponent();
@@ -28,18 +25,7 @@ namespace WindowsFormsApp2
         }
         private void LoadProducts()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "SELECT * FROM Products";
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-
-                DataTable table = new DataTable();
-
-                adapter.Fill(table);
-
-                dgvInventory.DataSource = table;
-            }
+          
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
