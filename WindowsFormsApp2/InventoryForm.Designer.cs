@@ -51,7 +51,7 @@
             this.panelTop.Controls.Add(this.lblInventory);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(869, 79);
             this.panelTop.TabIndex = 3;
@@ -76,7 +76,7 @@
             this.panelNav.Controls.Add(this.btnAdd);
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNav.Location = new System.Drawing.Point(0, 79);
-            this.panelNav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNav.Margin = new System.Windows.Forms.Padding(4);
             this.panelNav.Name = "panelNav";
             this.panelNav.Padding = new System.Windows.Forms.Padding(16, 15, 16, 15);
             this.panelNav.Size = new System.Drawing.Size(240, 475);
@@ -85,16 +85,17 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(16, 133);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(208, 44);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(16, 81);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(208, 44);
             this.btnEdit.TabIndex = 3;
@@ -103,7 +104,7 @@
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(16, 394);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(208, 44);
             this.btnBack.TabIndex = 0;
@@ -113,7 +114,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(16, 30);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(208, 44);
             this.btnAdd.TabIndex = 2;
@@ -124,7 +125,7 @@
             // 
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(248, 339);
-            this.dgvInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvInventory.Margin = new System.Windows.Forms.Padding(4);
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.Size = new System.Drawing.Size(610, 202);
@@ -178,7 +179,7 @@
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.panelNav);
             this.Controls.Add(this.panelTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InventoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS - Inventory";

@@ -29,7 +29,7 @@ namespace WindowsFormsApp2
         {
             productsData = new DataClasses1DataContext();
 
-            dgvInventory.DataSource = productsData.Products;
+            dgvInventory.DataSource = productsData.Products.ToList();
 
         }
 
@@ -83,6 +83,32 @@ namespace WindowsFormsApp2
 
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvInventory.SelectedRows.Count > 0)
+            {
+                int selectedId = Convert.ToInt32(dgvInventory.SelectedRows[0].Cells["ProductID"].Value);
 
+                using (var db = new DataClasses1DataContext())
+                {
+                    var itemToDelete = db.Products.FirstOrDefault(p => p.ProductID == selectedId);
+
+                    if (itemToDelete != null)
+                    {
+                        db.Products.DeleteOnSubmit(itemToDelete);
+                        db.SubmitChanges();
+                    }
+                }
+
+                MessageBox.Show("Product deleted successfully!", "Success",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LoadProducts();
+            }
+            else
+            {
+                MessageBox.Show("Please select a full row to delete.");
+            }
+        }
     }
 }

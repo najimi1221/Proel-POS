@@ -160,11 +160,8 @@
     <None Include="Resources\3135715.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\POSDatabase.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Database\POSDatabase.mdf" />
     <Content Include="Database\POSDatabase_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>POSDatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
