@@ -36,6 +36,43 @@ namespace WindowsFormsApp2
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtCategory.Text) ||
+                !decimal.TryParse(txtPrice.Text, out decimal price) ||
+                !int.TryParse(txtStock.Text, out int stock))
+            {
+                MessageBox.Show("Please enter valid details. Price and Stock must be numbers.",
+                                "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var db = new DataClasses1DataContext())
+                {
+                    Product newProduct = new Product
+                    {
+                        ProductName = txtName.Text.Trim(),
+                        Category = txtCategory.Text.Trim(),
+                        Price = price,               
+                        StockQuantity = stock       
+                    };
+
+                    db.Products.InsertOnSubmit(newProduct);
+                    db.SubmitChanges();
+                }
+
+                MessageBox.Show("Product added successfully!", "Success",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LoadProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Database Error: {ex.Message}", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)

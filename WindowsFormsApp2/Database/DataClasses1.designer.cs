@@ -36,7 +36,7 @@ namespace WindowsFormsApp2.Database
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::WindowsFormsApp2.Properties.Settings.Default.POSDatabaseConnectionString, mappingSource)
+				base(global::WindowsFormsApp2.Properties.Settings.Default.POSDatabaseConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -72,6 +72,13 @@ namespace WindowsFormsApp2.Database
 				return this.GetTable<Product>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddProduct")]
+		public int AddProduct([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductName", DbType="VarChar(100)")] string productName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Decimal(10,2)")] System.Nullable<decimal> price, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="StockQuantity", DbType="Int")] System.Nullable<int> stockQuantity)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productName, category, price, stockQuantity);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Products")]
@@ -88,7 +95,9 @@ namespace WindowsFormsApp2.Database
 		
 		private decimal _Price;
 		
-		private int _Stock;
+		private int _StockQuantity;
+		
+		private System.Nullable<System.DateTime> _CreatedAt;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -102,8 +111,10 @@ namespace WindowsFormsApp2.Database
     partial void OnCategoryChanged();
     partial void OnPriceChanging(decimal value);
     partial void OnPriceChanged();
-    partial void OnStockChanging(int value);
-    partial void OnStockChanged();
+    partial void OnStockQuantityChanging(int value);
+    partial void OnStockQuantityChanged();
+    partial void OnCreatedAtChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedAtChanged();
     #endregion
 		
 		public Product()
@@ -191,22 +202,42 @@ namespace WindowsFormsApp2.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Stock", DbType="Int NOT NULL")]
-		public int Stock
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockQuantity", DbType="Int NOT NULL")]
+		public int StockQuantity
 		{
 			get
 			{
-				return this._Stock;
+				return this._StockQuantity;
 			}
 			set
 			{
-				if ((this._Stock != value))
+				if ((this._StockQuantity != value))
 				{
-					this.OnStockChanging(value);
+					this.OnStockQuantityChanging(value);
 					this.SendPropertyChanging();
-					this._Stock = value;
-					this.SendPropertyChanged("Stock");
-					this.OnStockChanged();
+					this._StockQuantity = value;
+					this.SendPropertyChanged("StockQuantity");
+					this.OnStockQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedAt
+		{
+			get
+			{
+				return this._CreatedAt;
+			}
+			set
+			{
+				if ((this._CreatedAt != value))
+				{
+					this.OnCreatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedAt = value;
+					this.SendPropertyChanged("CreatedAt");
+					this.OnCreatedAtChanged();
 				}
 			}
 		}
