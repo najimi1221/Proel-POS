@@ -65,7 +65,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Product added successfully!", "Success",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LoadProducts();
+                LoadProducts();a
             }
             catch (Exception ex)
             {
