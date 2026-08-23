@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Force Git to track MDF and LDF files
+!*.mdf
+!*.ldf

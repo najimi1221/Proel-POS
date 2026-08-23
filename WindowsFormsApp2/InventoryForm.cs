@@ -8,15 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.Linq;
+using WindowsFormsApp2.Database;
 
 namespace WindowsFormsApp2
 {
     public partial class InventoryForm : Form
     {
-
-        string connectionString =
-            "Data Source=JEBBY\\SQLEXPRESS;Initial Catalog=PosDatabase;Integrated Security=True;TrustServerCertificate=True";
-        
+        DataClasses1DataContext productsData = new DataClasses1DataContext();
         public InventoryForm()
         {
             InitializeComponent();
@@ -28,22 +27,51 @@ namespace WindowsFormsApp2
         }
         private void LoadProducts()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "SELECT * FROM Products";
+            productsData = new DataClasses1DataContext();
 
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            dgvInventory.DataSource = productsData.Products.ToList();
 
-                DataTable table = new DataTable();
-
-                adapter.Fill(table);
-
-                dgvInventory.DataSource = table;
-            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtCategory.Text) ||
+                !decimal.TryParse(txtPrice.Text, out decimal price) ||
+                !int.TryParse(txtStock.Text, out int stock))
+            {
+                MessageBox.Show("Please enter valid details. Price and Stock must be numbers.",
+                                "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var db = new DataClasses1DataContext())
+                {
+                    Product newProduct = new Product
+                    {
+                        ProductName = txtName.Text.Trim(),
+                        Category = txtCategory.Text.Trim(),
+                        Price = price,               
+                        StockQuantity = stock       
+                    };
+
+                    db.Products.InsertOnSubmit(newProduct);
+                    db.SubmitChanges();
+                }
+
+                MessageBox.Show("Product added successfully!", "Success",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LoadProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Database Error: {ex.Message}", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -55,6 +83,32 @@ namespace WindowsFormsApp2
 
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvInventory.SelectedRows.Count > 0)
+            {
+                int selectedId = Convert.ToInt32(dgvInventory.SelectedRows[0].Cells["ProductID"].Value);
 
+                using (var db = new DataClasses1DataContext())
+                {
+                    var itemToDelete = db.Products.FirstOrDefault(p => p.ProductID == selectedId);
+
+                    if (itemToDelete != null)
+                    {
+                        db.Products.DeleteOnSubmit(itemToDelete);
+                        db.SubmitChanges();
+                    }
+                }
+
+                MessageBox.Show("Product deleted successfully!", "Success",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LoadProducts();
+            }
+            else
+            {
+                MessageBox.Show("Please select a full row to delete.");
+            }
+        }
     }
 }

@@ -63,6 +63,16 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3135715 {
+            get {
+                object obj = ResourceManager.GetObject("3135715", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cat_thumbs_up_thumbs_up_cat {
             get {
                 object obj = ResourceManager.GetObject("cat-thumbs-up-thumbs-up-cat", resourceCulture);

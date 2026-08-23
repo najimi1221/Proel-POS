@@ -74,7 +74,7 @@ namespace WindowsFormsApp2
             this.btnLogout.Location = new System.Drawing.Point(12, 320);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(156, 36);
-            this.btnLogout.TabIndex = 0;
+            this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -83,7 +83,7 @@ namespace WindowsFormsApp2
             this.btnInventory.Location = new System.Drawing.Point(12, 24);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(156, 36);
-            this.btnInventory.TabIndex = 2;
+            this.btnInventory.TabIndex = 1;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
