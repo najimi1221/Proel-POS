@@ -152,9 +152,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.Location = new System.Drawing.Point(24, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 20);
+            this.label1.Size = new System.Drawing.Size(44, 20);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Item Name:";
+            this.label1.Text = "Price";
             // 
             // label4
             // 
@@ -231,9 +231,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label9.Location = new System.Drawing.Point(24, 8);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 20);
+            this.label9.Size = new System.Drawing.Size(77, 20);
             this.label9.TabIndex = 10;
-            this.label9.Text = "Item Name:";
+            this.label9.Text = "Category:";
             // 
             // panel6
             // 
@@ -261,9 +261,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label10.Location = new System.Drawing.Point(24, 8);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 20);
+            this.label10.Size = new System.Drawing.Size(54, 20);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Item Name:";
+            this.label10.Text = "Stock:";
             // 
             // InventoryForm
             // 
