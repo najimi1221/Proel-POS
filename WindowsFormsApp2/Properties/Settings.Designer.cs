@@ -88,5 +88,16 @@ namespace WindowsFormsApp2.Properties {
                 return ((string)(this["POSDatabaseConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS01;Initial Catalog=POSDatabase;Integrated Security=True;T" +
+            "rustServerCertificate=True")]
+        public string POSDatabaseConnectionString3 {
+            get {
+                return ((string)(this["POSDatabaseConnectionString3"]));
+            }
+        }
     }
 }

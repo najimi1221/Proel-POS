@@ -159,11 +159,5 @@
   <ItemGroup>
     <None Include="Resources\3135715.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database\POSDatabase.mdf" />
-    <Content Include="Database\POSDatabase_log.ldf">
-      <DependentUpon>POSDatabase.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

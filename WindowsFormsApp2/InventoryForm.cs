@@ -50,22 +50,17 @@ namespace WindowsFormsApp2
             {
                 using (var db = new DataClasses1DataContext())
                 {
-                    Product newProduct = new Product
-                    {
-                        ProductName = txtPrice.Text.Trim(),
-                        Category = txtCategory.Text.Trim(),
-                        Price = price,               
-                        StockQuantity = stock       
-                    };
-
-                    db.Products.InsertOnSubmit(newProduct);
-                    db.SubmitChanges();
+                    db.AddProduct(
+                        txtName.Text, 
+                        txtCategory.Text, 
+                        price, 
+                        stock);
                 }
 
                 MessageBox.Show("Product added successfully!", "Success",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LoadProducts();a
+                LoadProducts();
             }
             catch (Exception ex)
             {
