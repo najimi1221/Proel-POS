@@ -28,7 +28,6 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelRight = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -42,9 +41,12 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.lblBrand = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelRight.SuspendLayout();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelRight
@@ -59,16 +61,15 @@
             this.panelRight.Controls.Add(this.linkExit);
             this.panelRight.Controls.Add(this.lblMessage);
             this.panelRight.Controls.Add(this.lblTitle);
-            this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRight.Location = new System.Drawing.Point(320, 0);
+            this.panelRight.Location = new System.Drawing.Point(320, 54);
             this.panelRight.Name = "panelRight";
             this.panelRight.Padding = new System.Windows.Forms.Padding(32);
-            this.panelRight.Size = new System.Drawing.Size(362, 450);
+            this.panelRight.Size = new System.Drawing.Size(362, 396);
             this.panelRight.TabIndex = 0;
             // 
             // lblUsername
             // 
-            this.lblUsername.Location = new System.Drawing.Point(32, 88);
+            this.lblUsername.Location = new System.Drawing.Point(29, 71);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(400, 18);
             this.lblUsername.TabIndex = 7;
@@ -76,15 +77,15 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(32, 108);
+            this.txtUsername.Location = new System.Drawing.Point(32, 92);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(141, 27);
+            this.txtUsername.Size = new System.Drawing.Size(284, 23);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblPassword
             // 
-            this.lblPassword.Location = new System.Drawing.Point(32, 152);
+            this.lblPassword.Location = new System.Drawing.Point(29, 128);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(400, 18);
             this.lblPassword.TabIndex = 6;
@@ -92,17 +93,17 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(32, 172);
+            this.txtPassword.Location = new System.Drawing.Point(32, 149);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(141, 27);
+            this.txtPassword.Size = new System.Drawing.Size(284, 23);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(112, 219);
+            this.btnClear.Location = new System.Drawing.Point(221, 200);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(61, 28);
+            this.btnClear.Size = new System.Drawing.Size(75, 28);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -110,12 +111,12 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(147)))), ((int)(((byte)(30)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(32, 218);
+            this.btnLogin.Location = new System.Drawing.Point(115, 194);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(61, 29);
+            this.btnLogin.Size = new System.Drawing.Size(96, 41);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Sign In";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -124,9 +125,9 @@
             // linkExit
             // 
             this.linkExit.LinkColor = System.Drawing.Color.Red;
-            this.linkExit.Location = new System.Drawing.Point(28, 320);
+            this.linkExit.Location = new System.Drawing.Point(145, 252);
             this.linkExit.Name = "linkExit";
-            this.linkExit.Size = new System.Drawing.Size(100, 20);
+            this.linkExit.Size = new System.Drawing.Size(33, 20);
             this.linkExit.TabIndex = 4;
             this.linkExit.TabStop = true;
             this.linkExit.Text = "Exit";
@@ -134,9 +135,9 @@
             // 
             // lblMessage
             // 
-            this.lblMessage.Location = new System.Drawing.Point(32, 272);
+            this.lblMessage.Location = new System.Drawing.Point(18, 284);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(400, 36);
+            this.lblMessage.Size = new System.Drawing.Size(287, 36);
             this.lblMessage.TabIndex = 5;
             // 
             // lblTitle
@@ -151,46 +152,69 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.panelLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLeft.BackgroundImage")));
+            this.panelLeft.BackColor = System.Drawing.Color.White;
             this.panelLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelLeft.Controls.Add(this.pictureBoxLogo);
             this.panelLeft.Controls.Add(this.lblBrand);
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelLeft.Location = new System.Drawing.Point(0, 57);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Padding = new System.Windows.Forms.Padding(20);
-            this.panelLeft.Size = new System.Drawing.Size(320, 450);
+            this.panelLeft.Size = new System.Drawing.Size(332, 393);
             this.panelLeft.TabIndex = 1;
+            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLogo.BackgroundImage = global::WindowsFormsApp2.Properties.Resources._3135715;
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(83, 71);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(63, 54);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(156, 144);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(164, 144);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // lblBrand
             // 
+            this.lblBrand.BackColor = System.Drawing.Color.Transparent;
             this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblBrand.ForeColor = System.Drawing.Color.White;
-            this.lblBrand.Location = new System.Drawing.Point(83, 218);
+            this.lblBrand.ForeColor = System.Drawing.Color.Black;
+            this.lblBrand.Location = new System.Drawing.Point(63, 201);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(156, 80);
+            this.lblBrand.Size = new System.Drawing.Size(164, 45);
             this.lblBrand.TabIndex = 1;
             this.lblBrand.Text = "POS System";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(43)))), ((int)(((byte)(58)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(-57, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(741, 64);
+            this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(164, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(435, 45);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "CONTRUCTION SUPPLY POS SYSTEM";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 450);
+            this.ClientSize = new System.Drawing.Size(684, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelLeft);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -202,9 +226,13 @@
             this.panelRight.PerformLayout();
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

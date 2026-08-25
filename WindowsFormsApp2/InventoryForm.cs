@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Linq;
 using WindowsFormsApp2.Database;
-
+    
 namespace WindowsFormsApp2
 {
     public partial class InventoryForm : Form
@@ -104,6 +104,31 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("Please select a full row to delete.");
             }
+        }
+
+        private void lblPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCategory_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStock_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

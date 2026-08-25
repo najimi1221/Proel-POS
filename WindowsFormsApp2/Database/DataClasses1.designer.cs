@@ -22,7 +22,7 @@ namespace WindowsFormsApp2.Database
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="POSDatabase")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="TDB")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,7 +36,7 @@ namespace WindowsFormsApp2.Database
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::WindowsFormsApp2.Properties.Settings.Default.POSDatabaseConnectionString3, mappingSource)
+				base(global::WindowsFormsApp2.Properties.Settings.Default.TDBConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
