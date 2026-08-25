@@ -36,7 +36,7 @@ namespace WindowsFormsApp2
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+            if (string.IsNullOrWhiteSpace(txtPrice.Text) ||
                 string.IsNullOrWhiteSpace(txtCategory.Text) ||
                 !decimal.TryParse(txtPrice.Text, out decimal price) ||
                 !int.TryParse(txtStock.Text, out int stock))
@@ -52,7 +52,7 @@ namespace WindowsFormsApp2
                 {
                     Product newProduct = new Product
                     {
-                        ProductName = txtName.Text.Trim(),
+                        ProductName = txtPrice.Text.Trim(),
                         Category = txtCategory.Text.Trim(),
                         Price = price,               
                         StockQuantity = stock       
