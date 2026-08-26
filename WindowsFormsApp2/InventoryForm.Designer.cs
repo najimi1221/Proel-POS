@@ -38,16 +38,15 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panelName = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.lblStock = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
-            this.panelName.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -98,7 +97,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(262, 427);
+            this.btnAdd.Location = new System.Drawing.Point(592, 77);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 36);
             this.btnAdd.TabIndex = 2;
@@ -108,7 +107,7 @@
             // dgvInventory
             // 
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(129, 29);
+            this.dgvInventory.Location = new System.Drawing.Point(119, 130);
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.Size = new System.Drawing.Size(458, 164);
@@ -121,7 +120,7 @@
             this.txtPrice.Location = new System.Drawing.Point(376, 358);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(145, 26);
+            this.txtPrice.Size = new System.Drawing.Size(145, 30);
             this.txtPrice.TabIndex = 6;
             // 
             // lblPrice
@@ -130,7 +129,7 @@
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblPrice.Location = new System.Drawing.Point(372, 335);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(48, 20);
+            this.lblPrice.Size = new System.Drawing.Size(62, 25);
             this.lblPrice.TabIndex = 10;
             this.lblPrice.Text = "Price:";
             // 
@@ -140,17 +139,8 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.Location = new System.Drawing.Point(203, 178);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.Size = new System.Drawing.Size(0, 25);
             this.label4.TabIndex = 13;
-            // 
-            // panelName
-            // 
-            this.panelName.Controls.Add(this.dgvInventory);
-            this.panelName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelName.Location = new System.Drawing.Point(0, 58);
-            this.panelName.Name = "panelName";
-            this.panelName.Size = new System.Drawing.Size(709, 222);
-            this.panelName.TabIndex = 18;
             // 
             // txtName
             // 
@@ -159,7 +149,7 @@
             this.txtName.Location = new System.Drawing.Point(16, 358);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(145, 26);
+            this.txtName.Size = new System.Drawing.Size(145, 30);
             this.txtName.TabIndex = 6;
             // 
             // lblName
@@ -168,7 +158,7 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblName.Location = new System.Drawing.Point(12, 335);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(114, 20);
+            this.lblName.Size = new System.Drawing.Size(142, 25);
             this.lblName.TabIndex = 10;
             this.lblName.Text = "Product Name:";
             // 
@@ -179,7 +169,7 @@
             this.txtCategory.Location = new System.Drawing.Point(194, 358);
             this.txtCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(145, 26);
+            this.txtCategory.Size = new System.Drawing.Size(145, 30);
             this.txtCategory.TabIndex = 6;
             // 
             // lblCategory
@@ -188,7 +178,7 @@
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblCategory.Location = new System.Drawing.Point(190, 335);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(77, 20);
+            this.lblCategory.Size = new System.Drawing.Size(98, 25);
             this.lblCategory.TabIndex = 10;
             this.lblCategory.Text = "Category:";
             // 
@@ -199,7 +189,7 @@
             this.txtStock.Location = new System.Drawing.Point(537, 358);
             this.txtStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(145, 26);
+            this.txtStock.Size = new System.Drawing.Size(145, 30);
             this.txtStock.TabIndex = 6;
             // 
             // lblStock
@@ -208,17 +198,30 @@
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblStock.Location = new System.Drawing.Point(533, 335);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(54, 20);
+            this.lblStock.Size = new System.Drawing.Size(68, 25);
             this.lblStock.TabIndex = 10;
             this.lblStock.Text = "Stock:";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(102, 79);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(253, 30);
+            this.txtSearch.TabIndex = 14;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // InventoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 475);
-            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dgvInventory);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.btnEdit);
@@ -229,7 +232,6 @@
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.panelName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panelTop);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,7 +241,6 @@
             this.Load += new System.EventHandler(this.InventoryForm_Load);
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
-            this.panelName.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,12 +258,12 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panelName;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
