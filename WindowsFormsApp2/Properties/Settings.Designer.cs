@@ -88,5 +88,38 @@ namespace WindowsFormsApp2.Properties {
                 return ((string)(this["POSDatabaseConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS01;Initial Catalog=POSDatabase;Integrated Security=True;T" +
+            "rustServerCertificate=True")]
+        public string POSDatabaseConnectionString3 {
+            get {
+                return ((string)(this["POSDatabaseConnectionString3"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Sakomi;Initial Catalog=TDB;Integrated Security=True;Encrypt=True;Trus" +
+            "tServerCertificate=True")]
+        public string TDBConnectionString {
+            get {
+                return ((string)(this["TDBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS01;Initial Catalog=POSDatabase;Integrated Security=True;E" +
+            "ncrypt=True;TrustServerCertificate=True")]
+        public string POSDatabaseConnectionString4 {
+            get {
+                return ((string)(this["POSDatabaseConnectionString4"]));
+            }
+        }
     }
 }
