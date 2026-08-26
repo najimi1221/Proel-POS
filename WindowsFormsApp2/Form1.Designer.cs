@@ -166,7 +166,6 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLogo.BackgroundImage = global::WindowsFormsApp2.Properties.Resources._3135715;
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBoxLogo.Location = new System.Drawing.Point(63, 46);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
