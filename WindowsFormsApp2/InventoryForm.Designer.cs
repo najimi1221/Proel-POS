@@ -123,7 +123,6 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(145, 26);
             this.txtPrice.TabIndex = 6;
-            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // lblPrice
             // 
@@ -134,7 +133,6 @@
             this.lblPrice.Size = new System.Drawing.Size(48, 20);
             this.lblPrice.TabIndex = 10;
             this.lblPrice.Text = "Price:";
-            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
             // 
             // label4
             // 
@@ -183,7 +181,6 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(145, 26);
             this.txtCategory.TabIndex = 6;
-            this.txtCategory.TextChanged += new System.EventHandler(this.txtCategory_TextChanged);
             // 
             // lblCategory
             // 
@@ -204,7 +201,6 @@
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(145, 26);
             this.txtStock.TabIndex = 6;
-            this.txtStock.TextChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // lblStock
             // 
@@ -215,7 +211,6 @@
             this.lblStock.Size = new System.Drawing.Size(54, 20);
             this.lblStock.TabIndex = 10;
             this.lblStock.Text = "Stock:";
-            this.lblStock.Click += new System.EventHandler(this.lblStock_Click);
             // 
             // InventoryForm
             // 

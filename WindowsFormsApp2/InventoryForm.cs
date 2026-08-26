@@ -78,6 +78,9 @@ namespace WindowsFormsApp2
 
         }
 
+
+
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvInventory.SelectedRows.Count > 0)
@@ -106,29 +109,6 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void lblPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCategory_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblStock_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtStock_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }
