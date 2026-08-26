@@ -130,15 +130,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Gemini_Generated_Image_u332t4u332t4u332.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cat-thumbs-up-thumbs-up-cat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cat-thumbs-up-thumbs-up-cat1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\employee_png.png" />
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +148,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\3135715.png" />
+    <None Include="Resources\human.icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\dashboard.icon.png" />
+    <Content Include="Resources\graph.icon.png" />
+    <Content Include="Resources\inventory.icon.png" />
+    <Content Include="Resources\sales.icon.png" />
+    <Content Include="Resources\Sales.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

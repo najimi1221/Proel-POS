@@ -168,9 +168,9 @@
             this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLogo.BackgroundImage = global::WindowsFormsApp2.Properties.Resources._3135715;
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(63, 54);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(63, 46);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(164, 144);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(164, 152);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
@@ -199,9 +199,9 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(164, 12);
+            this.label1.Location = new System.Drawing.Point(183, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(435, 45);
             this.label1.TabIndex = 2;
@@ -211,7 +211,7 @@
             // Form1
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 450);
             this.Controls.Add(this.panel1);

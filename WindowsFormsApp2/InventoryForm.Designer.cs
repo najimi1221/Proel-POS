@@ -98,7 +98,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(607, 6);
+            this.btnAdd.Location = new System.Drawing.Point(262, 427);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 36);
             this.btnAdd.TabIndex = 2;
@@ -108,7 +108,7 @@
             // dgvInventory
             // 
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(129, 9);
+            this.dgvInventory.Location = new System.Drawing.Point(129, 29);
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.Size = new System.Drawing.Size(458, 164);
@@ -148,11 +148,10 @@
             // panelName
             // 
             this.panelName.Controls.Add(this.dgvInventory);
-            this.panelName.Controls.Add(this.btnAdd);
             this.panelName.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelName.Location = new System.Drawing.Point(0, 58);
             this.panelName.Name = "panelName";
-            this.panelName.Size = new System.Drawing.Size(709, 193);
+            this.panelName.Size = new System.Drawing.Size(709, 222);
             this.panelName.TabIndex = 18;
             // 
             // txtName
@@ -224,6 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 475);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.btnEdit);
@@ -237,6 +237,7 @@
             this.Controls.Add(this.panelName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panelTop);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "InventoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS - Inventory";
