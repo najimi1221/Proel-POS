@@ -63,49 +63,9 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3135715 {
-            get {
-                object obj = ResourceManager.GetObject("3135715", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cat_thumbs_up_thumbs_up_cat {
-            get {
-                object obj = ResourceManager.GetObject("cat-thumbs-up-thumbs-up-cat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cat_thumbs_up_thumbs_up_cat1 {
-            get {
-                object obj = ResourceManager.GetObject("cat-thumbs-up-thumbs-up-cat1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap employee_png {
             get {
                 object obj = ResourceManager.GetObject("employee_png", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Gemini_Generated_Image_u332t4u332t4u332 {
-            get {
-                object obj = ResourceManager.GetObject("Gemini_Generated_Image_u332t4u332t4u332", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

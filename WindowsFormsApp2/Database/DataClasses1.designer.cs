@@ -36,7 +36,7 @@ namespace WindowsFormsApp2.Database
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::WindowsFormsApp2.Properties.Settings.Default.POSDatabaseConnectionString3, mappingSource)
+				base(global::WindowsFormsApp2.Properties.Settings.Default.POSDatabaseConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -78,6 +78,13 @@ namespace WindowsFormsApp2.Database
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, category, price, stock);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchProducts")]
+		public ISingleResult<searchProductsResult> searchProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Search", DbType="NVarChar(100)")] string search)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), search);
+			return ((ISingleResult<searchProductsResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -235,6 +242,86 @@ namespace WindowsFormsApp2.Database
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class searchProductsResult
+	{
+		
+		private string _Name;
+		
+		private string _Category;
+		
+		private decimal _Price;
+		
+		private int _Stock;
+		
+		public searchProductsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(10,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Stock", DbType="Int NOT NULL")]
+		public int Stock
+		{
+			get
+			{
+				return this._Stock;
+			}
+			set
+			{
+				if ((this._Stock != value))
+				{
+					this._Stock = value;
+				}
 			}
 		}
 	}

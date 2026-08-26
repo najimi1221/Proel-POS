@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Linq;
 using WindowsFormsApp2.Database;
-
+    
 namespace WindowsFormsApp2
 {
     public partial class InventoryForm : Form
@@ -30,7 +30,6 @@ namespace WindowsFormsApp2
             productsData = new DataClasses1DataContext();
 
             dgvInventory.DataSource = productsData.Products.ToList();
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -67,9 +66,29 @@ namespace WindowsFormsApp2
                 MessageBox.Show($"Database Error: {ex.Message}", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            productsData = new DataClasses1DataContext();
+
+            using (var db = new DataClasses1DataContext())
+            {
+                var searchResults = db.searchProducts(txtSearch.Text).ToList();
+                dgvInventory.DataSource = searchResults;
+            }
+
 
         }
 
+
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = new HomeForm("admin");
+            homeForm.Show();
+            this.Hide();
+        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -98,12 +117,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Please select a full row to delete.");
             }
         }
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            HomeForm homeForm = new HomeForm("admin");
-            homeForm.Show();
-            this.Hide();
 
-        }
+        
     }
 }
