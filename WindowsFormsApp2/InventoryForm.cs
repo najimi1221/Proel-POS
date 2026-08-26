@@ -124,7 +124,6 @@ namespace WindowsFormsApp2
         private void txtStock_TextChanged(object sender, EventArgs e)
         {
 
-
         }
 
         private void txtPrice_TextChanged(object sender, EventArgs e)
