@@ -70,13 +70,6 @@ namespace WindowsFormsApp2
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            HomeForm homeForm = new HomeForm("admin");
-            homeForm.Show();
-            this.Hide();
-
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -104,6 +97,13 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("Please select a full row to delete.");
             }
+        }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = new HomeForm("admin");
+            homeForm.Show();
+            this.Hide();
+
         }
     }
 }
