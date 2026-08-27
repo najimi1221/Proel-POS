@@ -22,7 +22,7 @@ namespace WindowsFormsApp2.Database
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="POSDatabase")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="TDB")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,7 +36,7 @@ namespace WindowsFormsApp2.Database
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::WindowsFormsApp2.Properties.Settings.Default.POSDatabaseConnectionString2, mappingSource)
+				base(global::WindowsFormsApp2.Properties.Settings.Default.TDBConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -71,6 +71,13 @@ namespace WindowsFormsApp2.Database
 			{
 				return this.GetTable<Product>();
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchProducts")]
+		public ISingleResult<searchProductsResult> searchProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Search", DbType="NVarChar(100)")] string search)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), search);
+			return ((ISingleResult<searchProductsResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddProduct")]
