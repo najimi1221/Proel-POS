@@ -28,6 +28,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelRight = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -39,14 +40,15 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.lblBrand = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelRight.SuspendLayout();
             this.panelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelRight
@@ -58,7 +60,6 @@
             this.panelRight.Controls.Add(this.txtPassword);
             this.panelRight.Controls.Add(this.btnClear);
             this.panelRight.Controls.Add(this.btnLogin);
-            this.panelRight.Controls.Add(this.linkExit);
             this.panelRight.Controls.Add(this.lblMessage);
             this.panelRight.Controls.Add(this.lblTitle);
             this.panelRight.Location = new System.Drawing.Point(320, 54);
@@ -77,15 +78,16 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(32, 92);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(284, 23);
+            this.txtUsername.Size = new System.Drawing.Size(284, 29);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblPassword
             // 
-            this.lblPassword.Location = new System.Drawing.Point(29, 128);
+            this.lblPassword.Location = new System.Drawing.Point(29, 150);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(400, 18);
             this.lblPassword.TabIndex = 6;
@@ -93,30 +95,33 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(32, 149);
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(32, 171);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(284, 23);
+            this.txtPassword.Size = new System.Drawing.Size(284, 29);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(221, 200);
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(43)))), ((int)(((byte)(58)))));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnClear.Location = new System.Drawing.Point(241, 222);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 28);
+            this.btnClear.Size = new System.Drawing.Size(75, 41);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(147)))), ((int)(((byte)(30)))));
+            this.btnLogin.BackColor = System.Drawing.Color.DarkOrange;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(115, 194);
+            this.btnLogin.Location = new System.Drawing.Point(32, 222);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(96, 41);
+            this.btnLogin.Size = new System.Drawing.Size(159, 41);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Sign In";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -124,13 +129,14 @@
             // 
             // linkExit
             // 
+            this.linkExit.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkExit.LinkColor = System.Drawing.Color.Red;
-            this.linkExit.Location = new System.Drawing.Point(145, 252);
+            this.linkExit.Location = new System.Drawing.Point(69, 12);
             this.linkExit.Name = "linkExit";
-            this.linkExit.Size = new System.Drawing.Size(33, 20);
+            this.linkExit.Size = new System.Drawing.Size(28, 29);
             this.linkExit.TabIndex = 4;
             this.linkExit.TabStop = true;
-            this.linkExit.Text = "Exit";
+            this.linkExit.Text = "X";
             this.linkExit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkExit_LinkClicked);
             // 
             // lblMessage
@@ -152,8 +158,9 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.White;
+            this.panelLeft.BackColor = System.Drawing.Color.Transparent;
             this.panelLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelLeft.Controls.Add(this.label2);
             this.panelLeft.Controls.Add(this.pictureBoxLogo);
             this.panelLeft.Controls.Add(this.lblBrand);
             this.panelLeft.Location = new System.Drawing.Point(0, 57);
@@ -163,26 +170,14 @@
             this.panelLeft.TabIndex = 1;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(63, 46);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(164, 152);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
-            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
-            // 
             // lblBrand
             // 
             this.lblBrand.BackColor = System.Drawing.Color.Transparent;
-            this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrand.ForeColor = System.Drawing.Color.Black;
-            this.lblBrand.Location = new System.Drawing.Point(63, 201);
+            this.lblBrand.Location = new System.Drawing.Point(80, 267);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(164, 45);
+            this.lblBrand.Size = new System.Drawing.Size(185, 32);
             this.lblBrand.TabIndex = 1;
             this.lblBrand.Text = "POS System";
             // 
@@ -190,9 +185,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(43)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.linkExit);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.panel1.Location = new System.Drawing.Point(-57, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(741, 64);
+            this.panel1.Size = new System.Drawing.Size(741, 62);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -206,6 +203,31 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "CONTRUCTION SUPPLY POS SYSTEM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxLogo.Image = global::WindowsFormsApp2.Properties.Resources.construction;
+            this.pictureBoxLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.InitialImage")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(37, 23);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(245, 222);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label2.Location = new System.Drawing.Point(83, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Construction Supply ";
             // 
             // Form1
             // 
@@ -224,14 +246,16 @@
             this.panelRight.ResumeLayout(false);
             this.panelRight.PerformLayout();
             this.panelLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.panelLeft.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -151,6 +151,9 @@
     <None Include="Resources\human.icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\construction.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\construction1.png" />
     <Content Include="Resources\dashboard.icon.png" />
     <Content Include="Resources\graph.icon.png" />
     <Content Include="Resources\inventory.icon.png" />
