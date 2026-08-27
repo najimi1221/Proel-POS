@@ -100,14 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Database\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
@@ -120,6 +115,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -128,15 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Gemini_Generated_Image_u332t4u332t4u332.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cat-thumbs-up-thumbs-up-cat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cat-thumbs-up-thumbs-up-cat1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\employee_png.png" />
@@ -157,13 +148,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\3135715.png" />
+    <None Include="Resources\human.icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\POSDatabase.mdf" />
-    <Content Include="Database\POSDatabase_log.ldf">
-      <DependentUpon>POSDatabase.mdf</DependentUpon>
-    </Content>
+    <Content Include="Resources\construction.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\construction1.png" />
+    <Content Include="Resources\dashboard.icon.png" />
+    <Content Include="Resources\graph.icon.png" />
+    <Content Include="Resources\inventory.icon.png" />
+    <Content Include="Resources\sales.icon.png" />
+    <Content Include="Resources\Sales.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

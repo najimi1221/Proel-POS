@@ -61,5 +61,16 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void panelLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
