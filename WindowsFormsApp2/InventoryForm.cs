@@ -24,6 +24,9 @@ namespace WindowsFormsApp2
         private void InventoryForm_Load(object sender, EventArgs e)
         {
             LoadProducts();
+
+            dgvInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void LoadProducts()
         {
