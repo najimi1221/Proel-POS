@@ -55,7 +55,6 @@
             // 
             this.panelRight.BackColor = System.Drawing.Color.White;
             this.panelRight.Controls.Add(this.lblUsername);
-            this.panelRight.Controls.Add(this.linkExit);
             this.panelRight.Controls.Add(this.txtUsername);
             this.panelRight.Controls.Add(this.lblPassword);
             this.panelRight.Controls.Add(this.txtPassword);
@@ -130,14 +129,14 @@
             // 
             // linkExit
             // 
-            this.linkExit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkExit.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkExit.LinkColor = System.Drawing.Color.Red;
-            this.linkExit.Location = new System.Drawing.Point(325, 24);
+            this.linkExit.Location = new System.Drawing.Point(69, 12);
             this.linkExit.Name = "linkExit";
-            this.linkExit.Size = new System.Drawing.Size(27, 20);
+            this.linkExit.Size = new System.Drawing.Size(28, 29);
             this.linkExit.TabIndex = 4;
             this.linkExit.TabStop = true;
-            this.linkExit.Text = "Exit";
+            this.linkExit.Text = "X";
             this.linkExit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkExit_LinkClicked);
             // 
             // lblMessage
@@ -186,6 +185,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(43)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.linkExit);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.panel1.Location = new System.Drawing.Point(-57, -3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(741, 62);
