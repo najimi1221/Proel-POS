@@ -23,21 +23,34 @@ namespace WindowsFormsApp2
 
         private void InventoryForm_Load(object sender, EventArgs e)
         {
-            LoadProducts();
-
             dgvInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            LoadProducts();
+            LoadCategories();
         }
+
+        // Load products from the database and bind to DataGridView
         private void LoadProducts()
         {
             productsData = new DataClasses1DataContext();
-
             dgvInventory.DataSource = productsData.Products.ToList();
         }
 
+        // Load categories from the database and bind to ComboBox
+        private void LoadCategories()
+        {
+            using (var db = new DataClasses1DataContext())
+            {
+                var categories = db.getCategory().Select(c => c.Category).ToList();
+                categories.Insert(0, "All Categories");
+                cmbCategory.DataSource = categories;
+            }
+        }
+
+        // Add a new product to the database
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrWhiteSpace(txtPrice.Text) ||
                 string.IsNullOrWhiteSpace(txtCategory.Text) ||
                 !decimal.TryParse(txtPrice.Text, out decimal price) ||
@@ -47,7 +60,6 @@ namespace WindowsFormsApp2
                                 "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             try
             {
                 using (var db = new DataClasses1DataContext())
@@ -58,10 +70,8 @@ namespace WindowsFormsApp2
                         price, 
                         stock);
                 }
-
                 MessageBox.Show("Product added successfully!", "Success",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 LoadProducts();
             }
             catch (Exception ex)
@@ -71,6 +81,7 @@ namespace WindowsFormsApp2
             }
         }
 
+        // Search products based on user input and update DataGridView
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             productsData = new DataClasses1DataContext();
@@ -80,19 +91,35 @@ namespace WindowsFormsApp2
                 var searchResults = db.searchProducts(txtSearch.Text).ToList();
                 dgvInventory.DataSource = searchResults;
             }
-
-
         }
 
-
-
-        private void btnBack_Click(object sender, EventArgs e)
+        private void txtSearch_Click(object sender, EventArgs e)
         {
-            HomeForm homeForm = new HomeForm("admin");
-            homeForm.Show();
-            this.Hide();
+            txtSearch.Clear();
         }
 
+
+        // Filter products based on selected category and update DataGridView
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = cmbCategory.SelectedItem.ToString();
+
+            using (var db = new DataClasses1DataContext())
+            {
+                var filteredProducts = db.Products.Where(p => p.Category == selectedCategory).ToList();
+                dgvInventory.DataSource = filteredProducts;
+            }
+
+        }
+
+
+
+        // =================================================================
+        // ==================== Unwanted Features ==========================
+        // =================================================================
+
+
+        // Delete the selected product from the database
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvInventory.SelectedRows.Count > 0)
@@ -121,9 +148,13 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void txtSearch_Click(object sender, EventArgs e)
+        // Navigate back to the HomeForm
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            txtSearch.Clear();
+            HomeForm homeForm = new HomeForm("admin");
+            homeForm.Show();
+            this.Hide();
         }
+
     }
 }

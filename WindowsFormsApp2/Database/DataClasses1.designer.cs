@@ -22,7 +22,7 @@ namespace WindowsFormsApp2.Database
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="TDB")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="POSDatabase")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -87,11 +87,11 @@ namespace WindowsFormsApp2.Database
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchProducts")]
-		public ISingleResult<searchProductsResult> searchProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Search", DbType="NVarChar(100)")] string search)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getCategory")]
+		public ISingleResult<getCategoryResult> getCategory()
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), search);
-			return ((ISingleResult<searchProductsResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<getCategoryResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -328,6 +328,32 @@ namespace WindowsFormsApp2.Database
 				if ((this._Stock != value))
 				{
 					this._Stock = value;
+				}
+			}
+		}
+	}
+	
+	public partial class getCategoryResult
+	{
+		
+		private string _Category;
+		
+		public getCategoryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
 				}
 			}
 		}
