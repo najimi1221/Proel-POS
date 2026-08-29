@@ -25,13 +25,9 @@
     <Parameter Name="Stock" Parameter="stock" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.searchProducts" Method="searchProducts">
-    <Parameter Name="Search" Parameter="search" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="searchProductsResult">
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+  <Function Name="dbo.getCategory" Method="getCategory">
+    <ElementType Name="getCategoryResult">
       <Column Name="Category" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
-      <Column Name="Stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

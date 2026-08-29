@@ -5,7 +5,7 @@
     <classShape Id="96732243-e4cf-4398-ab32-b90a6490339f" absoluteBounds="1.25, 0.5, 2, 1.7708968098958331">
       <DataClassMoniker Name="/DataClasses1DataContext/Product" />
       <nestedChildShapes>
-        <elementListCompartment Id="15a8502f-4e57-4743-ac0d-263e7c230129" absoluteBounds="1.2649999999999997, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="15a8502f-4e57-4743-ac0d-263e7c230129" absoluteBounds="3.265, 1.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
