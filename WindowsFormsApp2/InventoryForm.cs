@@ -10,12 +10,16 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Linq;
 using WindowsFormsApp2.Database;
-    
+using System.Security.Cryptography;
+using System.Drawing.Printing;
+
 namespace WindowsFormsApp2
 {
     public partial class InventoryForm : Form
     {
+        // Instantiate Database/DataClass
         DataClasses1DataContext productsData = new DataClasses1DataContext();
+        
         public InventoryForm()
         {
             InitializeComponent();
@@ -33,19 +37,16 @@ namespace WindowsFormsApp2
         // Load products from the database and bind to DataGridView
         private void LoadProducts()
         {
-            productsData = new DataClasses1DataContext();
             dgvInventory.DataSource = productsData.Products.ToList();
         }
 
         // Load categories from the database and bind to ComboBox
         private void LoadCategories()
         {
-            using (var db = new DataClasses1DataContext())
-            {
-                var categories = db.getCategory().Select(c => c.Category).ToList();
-                categories.Insert(0, "All Categories");
-                cmbCategory.DataSource = categories;
-            }
+            var categories = productsData.getCategory().Select(c => c.Category).ToList();
+            categories.Insert(0, "All Categories");
+            cmbCategory.DataSource = categories;
+            
         }
 
         // Add a new product to the database
@@ -84,33 +85,67 @@ namespace WindowsFormsApp2
         // Search products based on user input and update DataGridView
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            productsData = new DataClasses1DataContext();
-
-            using (var db = new DataClasses1DataContext())
-            {
-                var searchResults = db.searchProducts(txtSearch.Text).ToList();
-                dgvInventory.DataSource = searchResults;
-            }
+            var searchResults = productsData.searchProducts(txtSearch.Text).ToList();
+            dgvInventory.DataSource = searchResults;
+           
         }
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
             txtSearch.Clear();
+           
         }
 
 
         // Filter products based on selected category and update DataGridView
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             string selectedCategory = cmbCategory.SelectedItem.ToString();
 
-            using (var db = new DataClasses1DataContext())
+            if (selectedCategory == "All Categories" || string.IsNullOrEmpty(selectedCategory))
             {
-                var filteredProducts = db.Products.Where(p => p.Category == selectedCategory).ToList();
+                LoadProducts();
+            }
+            else
+            {
+                var filteredProducts = productsData.Products.Where(p => p.Category == selectedCategory).ToList();
                 dgvInventory.DataSource = filteredProducts;
             }
 
+
         }
+
+
+        private void FilterProducts()
+        {
+
+            string searchText = txtSearch.Text.Trim();
+            string selectedCategory = cmbCategory.SelectedItem?.ToString();
+
+            using (var db = new DataClasses1DataContext())
+            {
+                var products = db.Products.ToList();
+
+                // 1. Filter by category if a specific category is selected (and not "All Categories")
+                if (!string.IsNullOrEmpty(selectedCategory) && selectedCategory != "All Categories")
+                {
+                    products = products.Where(p => p.Category == selectedCategory).ToList();
+                }
+
+                // 2. Filter by search text in Name
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    products = products.Where(p => p.Name.Contains(searchText)).ToList();
+                }
+
+                // 3. Bind filtered results to grid (hiding ProductID)
+                dgvInventory.DataSource = products;
+            }
+
+        }
+
+
 
 
 
