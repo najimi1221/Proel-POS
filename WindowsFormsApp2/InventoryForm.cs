@@ -46,13 +46,14 @@ namespace WindowsFormsApp2
             var categories = productsData.getCategory().Select(c => c.Category).ToList();
             categories.Insert(0, "All Categories");
             cmbCategory.DataSource = categories;
-            
+            cmbCategory.SelectedIndex = 0; // Set default selection to "All Categories"
+
         }
 
         // Add a new product to the database
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtPrice.Text) ||
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
                 string.IsNullOrWhiteSpace(txtCategory.Text) ||
                 !decimal.TryParse(txtPrice.Text, out decimal price) ||
                 !int.TryParse(txtStock.Text, out int stock))
@@ -85,9 +86,10 @@ namespace WindowsFormsApp2
         // Search products based on user input and update DataGridView
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+
             var searchResults = productsData.searchProducts(txtSearch.Text).ToList();
             dgvInventory.DataSource = searchResults;
-           
+
         }
 
         private void txtSearch_Click(object sender, EventArgs e)
@@ -100,6 +102,7 @@ namespace WindowsFormsApp2
         // Filter products based on selected category and update DataGridView
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+
 
             string selectedCategory = cmbCategory.SelectedItem.ToString();
 
@@ -115,37 +118,6 @@ namespace WindowsFormsApp2
 
 
         }
-
-
-        private void FilterProducts()
-        {
-
-            string searchText = txtSearch.Text.Trim();
-            string selectedCategory = cmbCategory.SelectedItem?.ToString();
-
-            using (var db = new DataClasses1DataContext())
-            {
-                var products = db.Products.ToList();
-
-                // 1. Filter by category if a specific category is selected (and not "All Categories")
-                if (!string.IsNullOrEmpty(selectedCategory) && selectedCategory != "All Categories")
-                {
-                    products = products.Where(p => p.Category == selectedCategory).ToList();
-                }
-
-                // 2. Filter by search text in Name
-                if (!string.IsNullOrEmpty(searchText))
-                {
-                    products = products.Where(p => p.Name.Contains(searchText)).ToList();
-                }
-
-                // 3. Bind filtered results to grid (hiding ProductID)
-                dgvInventory.DataSource = products;
-            }
-
-        }
-
-
 
 
 
