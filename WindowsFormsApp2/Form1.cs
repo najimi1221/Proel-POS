@@ -26,7 +26,7 @@ namespace WindowsFormsApp2
             var pass = txtPassword.Text;
 
 
-            if (string.Equals(user, "admin", StringComparison.OrdinalIgnoreCase) && pass == "password")
+            if (string.Equals(user.ToLower(), "admin", StringComparison.OrdinalIgnoreCase) && pass.ToLower() == "password")
             {
                 HomeForm homeForm = new HomeForm(user);
                 homeForm.Show();
