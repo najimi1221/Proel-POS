@@ -154,7 +154,7 @@ namespace WindowsFormsApp2
         // =================================================================
 
 
-        // Delete the selected product from the database
+        // Delete the selected product from the database/Hard Delete
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvInventory.SelectedRows.Count > 0)

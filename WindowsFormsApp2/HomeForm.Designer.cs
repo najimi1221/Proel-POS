@@ -23,6 +23,15 @@ namespace WindowsFormsApp2
             this.panelTop = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelNav = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -36,27 +45,18 @@ namespace WindowsFormsApp2
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTop.SuspendLayout();
             this.panelNav.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -104,6 +104,92 @@ namespace WindowsFormsApp2
             this.panelNav.Padding = new System.Windows.Forms.Padding(12);
             this.panelNav.Size = new System.Drawing.Size(180, 384);
             this.panelNav.TabIndex = 1;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::WindowsFormsApp2.Properties.Resources.settings;
+            this.pictureBox5.Location = new System.Drawing.Point(12, 229);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::WindowsFormsApp2.Properties.Resources.graph_icon;
+            this.pictureBox4.Location = new System.Drawing.Point(12, 167);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::WindowsFormsApp2.Properties.Resources.Sales;
+            this.pictureBox3.Location = new System.Drawing.Point(14, 113);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WindowsFormsApp2.Properties.Resources.inventory_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 62);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.dashboard_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(75, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Settings";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(75, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Reports";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(75, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Sales";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(75, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Dashboard";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -176,7 +262,7 @@ namespace WindowsFormsApp2
             // 
             // btnInventory
             // 
-            this.btnInventory.Location = new System.Drawing.Point(67, 88);
+            this.btnInventory.Location = new System.Drawing.Point(67, 65);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(107, 36);
             this.btnInventory.TabIndex = 1;
@@ -220,88 +306,6 @@ namespace WindowsFormsApp2
             this.panelMain.Size = new System.Drawing.Size(620, 384);
             this.panelMain.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(75, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Dashboard";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(75, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Sales";
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(75, 199);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Reports";
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(75, 257);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Settings";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::WindowsFormsApp2.Properties.Resources.settings;
-            this.pictureBox5.Location = new System.Drawing.Point(21, 247);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::WindowsFormsApp2.Properties.Resources.graph_icon;
-            this.pictureBox4.Location = new System.Drawing.Point(15, 199);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(37, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::WindowsFormsApp2.Properties.Resources.Sales;
-            this.pictureBox3.Location = new System.Drawing.Point(15, 146);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WindowsFormsApp2.Properties.Resources.inventory_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(14, 88);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.dashboard_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // HomeForm
             // 
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -315,16 +319,16 @@ namespace WindowsFormsApp2
             this.Text = "POS - Dashboard";
             this.panelTop.ResumeLayout(false);
             this.panelNav.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
