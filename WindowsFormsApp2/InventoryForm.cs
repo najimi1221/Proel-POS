@@ -37,18 +37,9 @@ namespace WindowsFormsApp2
         // Load products from the database and bind to DataGridView
         private void LoadProducts()
         {
-            dgvInventory.DataSource = productsData.Products.ToList();
+            dgvInventory.DataSource = productsData.retrieveData().ToList();
         }
 
-        // Load categories from the database and bind to ComboBox
-        private void LoadCategories()
-        {
-            var categories = productsData.getCategory().Select(c => c.Category).ToList();
-            categories.Insert(0, "All Categories");
-            cmbCategory.DataSource = categories;
-            cmbCategory.SelectedIndex = 0; // Set default selection to "All Categories"
-
-        }
 
         // Add a new product to the database
         private void btnAdd_Click(object sender, EventArgs e)
@@ -99,6 +90,21 @@ namespace WindowsFormsApp2
         }
 
 
+
+        // =================================================================
+        // ==================== Unwanted Features ==========================
+        // =================================================================
+
+        // Load categories from the database and bind to ComboBox
+        private void LoadCategories()
+        {
+            var categories = productsData.getCategory().Select(c => c.Category).ToList();
+            categories.Insert(0, "All Categories");
+            cmbCategory.DataSource = categories;
+            cmbCategory.SelectedIndex = 0; 
+
+        }
+
         // Filter products based on selected category and update DataGridView
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -120,39 +126,33 @@ namespace WindowsFormsApp2
         }
 
 
-
-        // =================================================================
-        // ==================== Unwanted Features ==========================
-        // =================================================================
-
-
         // Delete the selected product from the database
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvInventory.SelectedRows.Count > 0)
-            {
-                int selectedId = Convert.ToInt32(dgvInventory.SelectedRows[0].Cells["ProductID"].Value);
+            //if (dgvInventory.SelectedRows.Count > 0)
+            //{
+            //    int selectedId = Convert.ToInt32(dgvInventory.SelectedRows[0].Cells["ProductID"].Value);
 
-                using (var db = new DataClasses1DataContext())
-                {
-                    var itemToDelete = db.Products.FirstOrDefault(p => p.ProductID == selectedId);
+            //    using (var db = new DataClasses1DataContext())
+            //    {
+            //        var itemToDelete = db.Products.FirstOrDefault(p => p.ProductID == selectedId);
 
-                    if (itemToDelete != null)
-                    {
-                        db.Products.DeleteOnSubmit(itemToDelete);
-                        db.SubmitChanges();
-                    }
-                }
+            //        if (itemToDelete != null)
+            //        {
+            //            db.Products.DeleteOnSubmit(itemToDelete);
+            //            db.SubmitChanges();
+            //        }
+            //    }
 
-                MessageBox.Show("Product deleted successfully!", "Success",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    MessageBox.Show("Product deleted successfully!", "Success",
+            //                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LoadProducts();
-            }
-            else
-            {
-                MessageBox.Show("Please select a full row to delete.");
-            }
+            //    LoadProducts();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please select a full row to delete.");
+            //}
         }
 
         // Navigate back to the HomeForm

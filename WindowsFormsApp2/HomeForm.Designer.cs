@@ -263,6 +263,8 @@ namespace WindowsFormsApp2
             // btnInventory
             // 
             this.btnInventory.FlatAppearance.BorderSize = 0;
+            this.btnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Location = new System.Drawing.Point(71, 90);
             this.btnInventory.Name = "btnInventory";
