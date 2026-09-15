@@ -29,7 +29,7 @@ namespace WindowsFormsApp2
         {
             dgvInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+            dgvInventory.CellClick += dgvInventory_CellClick;
             LoadProducts();
             LoadCategories();
         }
@@ -116,6 +116,18 @@ namespace WindowsFormsApp2
 
         }
 
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // e.RowIndex is -1 when the header row is clicked — guard against that
+            if (e.RowIndex >= 0)
+            {
+                var row = dgvInventory.Rows[e.RowIndex];
+                txtName.Text = row.Cells["Name"].Value.ToString();
+                txtCategory.Text = row.Cells["Category"].Value.ToString();
+                txtPrice.Text = row.Cells["Price"].Value.ToString();
+                txtStock.Text = row.Cells["Stock"].Value.ToString();
+            }
+        }
 
         private void FilterProducts()
         {
@@ -144,9 +156,6 @@ namespace WindowsFormsApp2
             }
 
         }
-
-
-
 
 
         // =================================================================
@@ -191,5 +200,48 @@ namespace WindowsFormsApp2
             this.Hide();
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvInventory.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a product to edit.", "No Selection",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtCategory.Text) ||
+                !decimal.TryParse(txtPrice.Text, out decimal price) ||
+                !int.TryParse(txtStock.Text, out int stock))
+            {
+                MessageBox.Show("Please enter valid details. Price and Stock must be numbers.",
+                                "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int selectedId = Convert.ToInt32(dgvInventory.SelectedRows[0].Cells["ProductID"].Value);
+
+                using (var db = new DataClasses1DataContext())
+                {
+                    db.updateProduct(
+                        selectedId,
+                        txtName.Text,
+                        txtCategory.Text,
+                        price,
+                        stock);
+                }
+
+                MessageBox.Show("Product updated successfully!", "Success",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Database Error: {ex.Message}", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

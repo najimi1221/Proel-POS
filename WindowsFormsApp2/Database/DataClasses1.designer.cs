@@ -22,7 +22,7 @@ namespace WindowsFormsApp2.Database
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="POSDatabase")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="TDB")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -92,6 +92,13 @@ namespace WindowsFormsApp2.Database
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<getCategoryResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateProduct")]
+		public int updateProduct([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="Int")] System.Nullable<int> productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="NVarChar(100)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Decimal(10,2)")] System.Nullable<decimal> price, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Stock", DbType="Int")] System.Nullable<int> stock)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID, name, category, price, stock);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	

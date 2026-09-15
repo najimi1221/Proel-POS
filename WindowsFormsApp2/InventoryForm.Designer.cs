@@ -80,7 +80,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Location = new System.Drawing.Point(17, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 17);
+            this.label4.Size = new System.Drawing.Size(174, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Manage your construction materials";
             // 
@@ -106,6 +106,7 @@
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnBack
             // 
@@ -169,7 +170,7 @@
             this.txtPrice.Location = new System.Drawing.Point(376, 358);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(145, 30);
+            this.txtPrice.Size = new System.Drawing.Size(145, 26);
             this.txtPrice.TabIndex = 6;
             // 
             // lblPrice
@@ -178,7 +179,7 @@
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.Location = new System.Drawing.Point(372, 335);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(59, 20);
+            this.lblPrice.Size = new System.Drawing.Size(47, 16);
             this.lblPrice.TabIndex = 10;
             this.lblPrice.Text = "Price:";
             // 
@@ -189,7 +190,7 @@
             this.txtName.Location = new System.Drawing.Point(16, 358);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(145, 30);
+            this.txtName.Size = new System.Drawing.Size(145, 26);
             this.txtName.TabIndex = 6;
             // 
             // lblName
@@ -198,7 +199,7 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(12, 335);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(134, 20);
+            this.lblName.Size = new System.Drawing.Size(109, 16);
             this.lblName.TabIndex = 10;
             this.lblName.Text = "Product Name:";
             // 
@@ -209,7 +210,7 @@
             this.txtCategory.Location = new System.Drawing.Point(194, 358);
             this.txtCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(145, 30);
+            this.txtCategory.Size = new System.Drawing.Size(145, 26);
             this.txtCategory.TabIndex = 6;
             // 
             // lblCategory
@@ -218,7 +219,7 @@
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.Location = new System.Drawing.Point(190, 335);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(90, 20);
+            this.lblCategory.Size = new System.Drawing.Size(74, 16);
             this.lblCategory.TabIndex = 10;
             this.lblCategory.Text = "Category:";
             // 
@@ -229,7 +230,7 @@
             this.txtStock.Location = new System.Drawing.Point(537, 358);
             this.txtStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(145, 30);
+            this.txtStock.Size = new System.Drawing.Size(145, 26);
             this.txtStock.TabIndex = 6;
             // 
             // lblStock
@@ -238,7 +239,7 @@
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.Location = new System.Drawing.Point(533, 335);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(62, 20);
+            this.lblStock.Size = new System.Drawing.Size(50, 16);
             this.lblStock.TabIndex = 10;
             this.lblStock.Text = "Stock:";
             // 
@@ -250,7 +251,7 @@
             this.txtSearch.Location = new System.Drawing.Point(11, 89);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(253, 26);
+            this.txtSearch.Size = new System.Drawing.Size(253, 22);
             this.txtSearch.TabIndex = 14;
             this.txtSearch.Text = "Search Products...";
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
@@ -263,13 +264,13 @@
             this.cmbCategory.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.cmbCategory.Location = new System.Drawing.Point(297, 89);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(187, 28);
+            this.cmbCategory.Size = new System.Drawing.Size(187, 24);
             this.cmbCategory.TabIndex = 15;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // InventoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 475);
             this.Controls.Add(this.cmbCategory);
