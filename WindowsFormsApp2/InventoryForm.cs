@@ -29,7 +29,7 @@ namespace WindowsFormsApp2
         {
             dgvInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvInventory.CellClick += dgvInventory_CellClick;
+
             LoadProducts();
             LoadCategories();
         }
@@ -37,22 +37,14 @@ namespace WindowsFormsApp2
         // Load products from the database and bind to DataGridView
         private void LoadProducts()
         {
-            dgvInventory.DataSource = productsData.Products.ToList();
+            dgvInventory.DataSource = productsData.retrieveData().ToList();
         }
 
-        // Load categories from the database and bind to ComboBox
-        private void LoadCategories()
-        {
-            var categories = productsData.getCategory().Select(c => c.Category).ToList();
-            categories.Insert(0, "All Categories");
-            cmbCategory.DataSource = categories;
-            
-        }
 
         // Add a new product to the database
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtPrice.Text) ||
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
                 string.IsNullOrWhiteSpace(txtCategory.Text) ||
                 !decimal.TryParse(txtPrice.Text, out decimal price) ||
                 !int.TryParse(txtStock.Text, out int stock))
@@ -85,9 +77,10 @@ namespace WindowsFormsApp2
         // Search products based on user input and update DataGridView
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+
             var searchResults = productsData.searchProducts(txtSearch.Text).ToList();
             dgvInventory.DataSource = searchResults;
-           
+
         }
 
         private void txtSearch_Click(object sender, EventArgs e)
@@ -97,9 +90,25 @@ namespace WindowsFormsApp2
         }
 
 
+
+        // =================================================================
+        // ==================== Unwanted Features ==========================
+        // =================================================================
+
+        // Load categories from the database and bind to ComboBox
+        private void LoadCategories()
+        {
+            var categories = productsData.getCategory().Select(c => c.Category).ToList();
+            categories.Insert(0, "All Categories");
+            cmbCategory.DataSource = categories;
+            cmbCategory.SelectedIndex = 0; 
+
+        }
+
         // Filter products based on selected category and update DataGridView
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+
 
             string selectedCategory = cmbCategory.SelectedItem.ToString();
 
@@ -116,80 +125,34 @@ namespace WindowsFormsApp2
 
         }
 
-        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // e.RowIndex is -1 when the header row is clicked — guard against that
-            if (e.RowIndex >= 0)
-            {
-                var row = dgvInventory.Rows[e.RowIndex];
-                txtName.Text = row.Cells["Name"].Value.ToString();
-                txtCategory.Text = row.Cells["Category"].Value.ToString();
-                txtPrice.Text = row.Cells["Price"].Value.ToString();
-                txtStock.Text = row.Cells["Stock"].Value.ToString();
-            }
-        }
 
-        private void FilterProducts()
-        {
-
-            string searchText = txtSearch.Text.Trim();
-            string selectedCategory = cmbCategory.SelectedItem?.ToString();
-
-            using (var db = new DataClasses1DataContext())
-            {
-                var products = db.Products.ToList();
-
-                // 1. Filter by category if a specific category is selected (and not "All Categories")
-                if (!string.IsNullOrEmpty(selectedCategory) && selectedCategory != "All Categories")
-                {
-                    products = products.Where(p => p.Category == selectedCategory).ToList();
-                }
-
-                // 2. Filter by search text in Name
-                if (!string.IsNullOrEmpty(searchText))
-                {
-                    products = products.Where(p => p.Name.Contains(searchText)).ToList();
-                }
-
-                // 3. Bind filtered results to grid (hiding ProductID)
-                dgvInventory.DataSource = products;
-            }
-
-        }
-
-
-        // =================================================================
-        // ==================== Unwanted Features ==========================
-        // =================================================================
-
-
-        // Delete the selected product from the database/Hard Delete
+        // Delete the selected product from the database
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvInventory.SelectedRows.Count > 0)
-            {
-                int selectedId = Convert.ToInt32(dgvInventory.SelectedRows[0].Cells["ProductID"].Value);
+            //if (dgvInventory.SelectedRows.Count > 0)
+            //{
+            //    int selectedId = Convert.ToInt32(dgvInventory.SelectedRows[0].Cells["ProductID"].Value);
 
-                using (var db = new DataClasses1DataContext())
-                {
-                    var itemToDelete = db.Products.FirstOrDefault(p => p.ProductID == selectedId);
+            //    using (var db = new DataClasses1DataContext())
+            //    {
+            //        var itemToDelete = db.Products.FirstOrDefault(p => p.ProductID == selectedId);
 
-                    if (itemToDelete != null)
-                    {
-                        db.Products.DeleteOnSubmit(itemToDelete);
-                        db.SubmitChanges();
-                    }
-                }
+            //        if (itemToDelete != null)
+            //        {
+            //            db.Products.DeleteOnSubmit(itemToDelete);
+            //            db.SubmitChanges();
+            //        }
+            //    }
 
-                MessageBox.Show("Product deleted successfully!", "Success",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    MessageBox.Show("Product deleted successfully!", "Success",
+            //                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LoadProducts();
-            }
-            else
-            {
-                MessageBox.Show("Please select a full row to delete.");
-            }
+            //    LoadProducts();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please select a full row to delete.");
+            //}
         }
 
         // Navigate back to the HomeForm
@@ -200,48 +163,5 @@ namespace WindowsFormsApp2
             this.Hide();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            if (dgvInventory.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select a product to edit.", "No Selection",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtName.Text) ||
-                string.IsNullOrWhiteSpace(txtCategory.Text) ||
-                !decimal.TryParse(txtPrice.Text, out decimal price) ||
-                !int.TryParse(txtStock.Text, out int stock))
-            {
-                MessageBox.Show("Please enter valid details. Price and Stock must be numbers.",
-                                "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                int selectedId = Convert.ToInt32(dgvInventory.SelectedRows[0].Cells["ProductID"].Value);
-
-                using (var db = new DataClasses1DataContext())
-                {
-                    db.updateProduct(
-                        selectedId,
-                        txtName.Text,
-                        txtCategory.Text,
-                        price,
-                        stock);
-                }
-
-                MessageBox.Show("Product updated successfully!", "Success",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadProducts();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Database Error: {ex.Message}", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
     }
 }

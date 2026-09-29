@@ -77,7 +77,7 @@ namespace WindowsFormsApp2
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(16, 19);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(134, 28);
+            this.lblTitle.Size = new System.Drawing.Size(164, 28);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Dashboard";
             // 
@@ -108,9 +108,9 @@ namespace WindowsFormsApp2
             // pictureBox5
             // 
             this.pictureBox5.Image = global::WindowsFormsApp2.Properties.Resources.settings;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 229);
+            this.pictureBox5.Location = new System.Drawing.Point(21, 247);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox5.Size = new System.Drawing.Size(31, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
@@ -118,9 +118,9 @@ namespace WindowsFormsApp2
             // pictureBox4
             // 
             this.pictureBox4.Image = global::WindowsFormsApp2.Properties.Resources.graph_icon;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 167);
+            this.pictureBox4.Location = new System.Drawing.Point(15, 199);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 35);
+            this.pictureBox4.Size = new System.Drawing.Size(37, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
@@ -128,9 +128,9 @@ namespace WindowsFormsApp2
             // pictureBox3
             // 
             this.pictureBox3.Image = global::WindowsFormsApp2.Properties.Resources.Sales;
-            this.pictureBox3.Location = new System.Drawing.Point(14, 113);
+            this.pictureBox3.Location = new System.Drawing.Point(15, 146);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox3.Size = new System.Drawing.Size(37, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -138,7 +138,7 @@ namespace WindowsFormsApp2
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WindowsFormsApp2.Properties.Resources.inventory_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(14, 62);
+            this.pictureBox2.Location = new System.Drawing.Point(14, 90);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(38, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +148,7 @@ namespace WindowsFormsApp2
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.dashboard_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,39 +157,39 @@ namespace WindowsFormsApp2
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(75, 233);
+            this.label4.Location = new System.Drawing.Point(75, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Settings";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(75, 173);
+            this.label3.Location = new System.Drawing.Point(75, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Reports";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(75, 121);
+            this.label2.Location = new System.Drawing.Point(75, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Sales";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(75, 18);
+            this.label1.Location = new System.Drawing.Point(75, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Dashboard";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -253,20 +253,31 @@ namespace WindowsFormsApp2
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnLogout.FlatAppearance.BorderSize = 2;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLogout.Location = new System.Drawing.Point(12, 320);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(156, 36);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnInventory
             // 
-            this.btnInventory.Location = new System.Drawing.Point(67, 65);
+            this.btnInventory.FlatAppearance.BorderSize = 0;
+            this.btnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventory.Location = new System.Drawing.Point(71, 90);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(107, 36);
+            this.btnInventory.Size = new System.Drawing.Size(86, 36);
             this.btnInventory.TabIndex = 1;
             this.btnInventory.Text = "Inventory";
+            this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // panel1
