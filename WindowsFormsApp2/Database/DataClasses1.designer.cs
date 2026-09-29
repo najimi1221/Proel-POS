@@ -73,13 +73,6 @@ namespace WindowsFormsApp2.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchProducts")]
-		public ISingleResult<searchProductsResult> searchProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Search", DbType="NVarChar(100)")] string search)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), search);
-			return ((ISingleResult<searchProductsResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddProduct")]
 		public int AddProduct([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="NVarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Decimal(10,2)")] System.Nullable<decimal> price, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Stock", DbType="Int")] System.Nullable<int> stock)
 		{
@@ -87,11 +80,11 @@ namespace WindowsFormsApp2.Database
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getCategory")]
-		public ISingleResult<getCategoryResult> getCategory()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateProducts")]
+		public int updateProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="Int")] System.Nullable<int> productID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="NVarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Decimal(10,2)")] System.Nullable<decimal> price, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Stock", DbType="Int")] System.Nullable<int> stock)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<getCategoryResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID, name, category, price, stock);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.retrieveData")]
@@ -99,6 +92,27 @@ namespace WindowsFormsApp2.Database
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<retrieveDataResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchProducts")]
+		public ISingleResult<searchProductsResult> searchProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Search", DbType="NVarChar(100)")] string search)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), search);
+			return ((ISingleResult<searchProductsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.hardDeleteProduct")]
+		public int hardDeleteProduct([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="Int")] System.Nullable<int> productID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.softDeleteProduct")]
+		public int softDeleteProduct([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProductID", DbType="Int")] System.Nullable<int> productID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), productID);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -260,8 +274,10 @@ namespace WindowsFormsApp2.Database
 		}
 	}
 	
-	public partial class searchProductsResult
+	public partial class retrieveDataResult
 	{
+		
+		private int _ProductID;
 		
 		private string _Name;
 		
@@ -271,8 +287,24 @@ namespace WindowsFormsApp2.Database
 		
 		private int _Stock;
 		
-		public searchProductsResult()
+		public retrieveDataResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
+		public int ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this._ProductID = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
@@ -340,34 +372,10 @@ namespace WindowsFormsApp2.Database
 		}
 	}
 	
-	public partial class getCategoryResult
+	public partial class searchProductsResult
 	{
 		
-		private string _Category;
-		
-		public getCategoryResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Category
-		{
-			get
-			{
-				return this._Category;
-			}
-			set
-			{
-				if ((this._Category != value))
-				{
-					this._Category = value;
-				}
-			}
-		}
-	}
-	
-	public partial class retrieveDataResult
-	{
+		private int _ProductID;
 		
 		private string _Name;
 		
@@ -377,8 +385,24 @@ namespace WindowsFormsApp2.Database
 		
 		private int _Stock;
 		
-		public retrieveDataResult()
+		public searchProductsResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
+		public int ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this._ProductID = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
