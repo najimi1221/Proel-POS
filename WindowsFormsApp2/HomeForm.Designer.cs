@@ -253,11 +253,17 @@ namespace WindowsFormsApp2
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnLogout.FlatAppearance.BorderSize = 2;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLogout.Location = new System.Drawing.Point(12, 320);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(156, 36);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnInventory

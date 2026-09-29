@@ -81,7 +81,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(32, 92);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(284, 34);
+            this.txtUsername.Size = new System.Drawing.Size(284, 29);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
@@ -98,7 +98,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(32, 171);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(284, 34);
+            this.txtPassword.Size = new System.Drawing.Size(284, 29);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -117,6 +117,8 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(32, 222);
             this.btnLogin.Name = "btnLogin";
@@ -176,7 +178,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.label2.Location = new System.Drawing.Point(85, 296);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 20);
+            this.label2.Size = new System.Drawing.Size(118, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Construction Supply ";
             // 
@@ -231,7 +233,7 @@
             // Form1
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 450);
             this.Controls.Add(this.panel1);
