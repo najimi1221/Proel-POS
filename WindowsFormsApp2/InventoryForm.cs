@@ -17,8 +17,6 @@ namespace WindowsFormsApp2
 {
     public partial class InventoryForm : Form
     {
-        // Instantiate Database/DataClass
-        DataClasses1DataContext productsData = new DataClasses1DataContext();
 
         private int selectedProductId = 0; 
 
@@ -33,10 +31,9 @@ namespace WindowsFormsApp2
             dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             LoadProducts();
-        
+            LoadCategories();
+
         }
-
-
 
 
         // ==================== RETRIEVE ===================================
@@ -161,17 +158,8 @@ namespace WindowsFormsApp2
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    
-        private void ClearInputs()
-        {
-            selectedProductId = 0;
-            txtName.Clear();
-            txtCategory.Clear();
-            txtPrice.Clear();
-            txtStock.Clear();
-        }
 
-        private void dgvInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Ignore clicks on column headers or empty rows
             if (e.RowIndex >= 0)
@@ -188,8 +176,6 @@ namespace WindowsFormsApp2
                 txtStock.Text = row.Cells["Stock"].Value?.ToString();
             }
         }
-
-
 
         // ==================== Hard Delete ================================
         private void btnDelete_Click(object sender, EventArgs e)
@@ -232,14 +218,7 @@ namespace WindowsFormsApp2
    
 
 
-        // Navigate back to the HomeForm
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            HomeForm homeForm = new HomeForm("admin");
-            homeForm.Show();
-            this.Hide();
-        }
-
+        // ==================== Soft Delete ================================
         private void btnArchive_Click(object sender, EventArgs e)
         {
             if (selectedProductId == 0)
@@ -280,7 +259,58 @@ namespace WindowsFormsApp2
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbCategory.SelectedItem == null) return;
 
+            string selectedOption = cmbCategory.SelectedItem.ToString();
+
+            using (var db = new DataClasses1DataContext())
+            {
+                if (selectedOption == "Archived Products")
+                {
+                    // Load soft-deleted products via your procedure
+                    dgvInventory.DataSource = db.showDeletedProducts().ToList();
+                }
+                else
+                {
+                    // Load active products via your retrieve procedure
+                    dgvInventory.DataSource = db.retrieveData().ToList();
+                }
+            }
+
+            // Hide ProductID column from the user interface
+            if (dgvInventory.Columns["ProductID"] != null)
+            {
+                dgvInventory.Columns["ProductID"].Visible = false;
+            }
+        }
+
+
+        // ==================== Methods =====================================
+
+        private void LoadCategories()
+        {
+            cmbCategory.Items.Clear();
+            cmbCategory.Items.Add("Active Products");
+            cmbCategory.Items.Add("Archived Products");
+
+            cmbCategory.SelectedIndex = 0; 
+        }
+        private void ClearInputs()
+        {
+            selectedProductId = 0;
+            txtName.Clear();
+            txtCategory.Clear();
+            txtPrice.Clear();
+            txtStock.Clear();
+        }
+
+
+        // Navigate back to the HomeForm
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = new HomeForm("admin");
+            homeForm.Show();
+            this.Hide();
         }
 
 
