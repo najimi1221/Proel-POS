@@ -43,7 +43,8 @@ namespace WindowsFormsApp2
 
         // Add a new product to the database
         private void btnAdd_Click(object sender, EventArgs e)
-        {
+        {   
+            
             if (string.IsNullOrWhiteSpace(txtName.Text) ||
                 string.IsNullOrWhiteSpace(txtCategory.Text) ||
                 !decimal.TryParse(txtPrice.Text, out decimal price) ||
