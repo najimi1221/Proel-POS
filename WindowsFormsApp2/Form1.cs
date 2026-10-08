@@ -57,20 +57,34 @@ namespace WindowsFormsApp2
             Application.Exit();
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
+
+        private void txtUsername_Click(object sender, EventArgs e)
         {
+            txtUsername.Clear();
+            txtUsername.ForeColor = Color.Black;
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Clear();
+            txtPassword.ForeColor = Color.Black;
 
         }
 
-        private void panelLeft_Paint(object sender, PaintEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            if (txtPassword.UseSystemPasswordChar == true)
+            {
+                txtPassword.UseSystemPasswordChar = false;
 
-        }
+
+            }
+            else if (txtPassword.UseSystemPasswordChar == false)
+            {
+                txtPassword.UseSystemPasswordChar = true;
 
 
-        private void pictureBoxLogo_Click(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }

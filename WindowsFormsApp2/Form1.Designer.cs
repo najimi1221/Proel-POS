@@ -45,6 +45,7 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelRight.SuspendLayout();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -54,6 +55,7 @@
             // panelRight
             // 
             this.panelRight.BackColor = System.Drawing.Color.White;
+            this.panelRight.Controls.Add(this.button1);
             this.panelRight.Controls.Add(this.lblUsername);
             this.panelRight.Controls.Add(this.txtUsername);
             this.panelRight.Controls.Add(this.lblPassword);
@@ -79,11 +81,12 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtUsername.Location = new System.Drawing.Point(32, 92);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(284, 29);
             this.txtUsername.TabIndex = 0;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
             // 
             // lblPassword
             // 
@@ -96,11 +99,13 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtPassword.Location = new System.Drawing.Point(32, 171);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(284, 29);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // btnClear
             // 
@@ -169,14 +174,13 @@
             this.panelLeft.Padding = new System.Windows.Forms.Padding(20);
             this.panelLeft.Size = new System.Drawing.Size(332, 393);
             this.panelLeft.TabIndex = 1;
-            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label2.Location = new System.Drawing.Point(85, 296);
+            this.label2.Location = new System.Drawing.Point(108, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 15);
             this.label2.TabIndex = 2;
@@ -194,16 +198,15 @@
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
-            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // lblBrand
             // 
             this.lblBrand.BackColor = System.Drawing.Color.Transparent;
             this.lblBrand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrand.ForeColor = System.Drawing.Color.Black;
-            this.lblBrand.Location = new System.Drawing.Point(65, 264);
+            this.lblBrand.Location = new System.Drawing.Point(79, 248);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(185, 32);
+            this.lblBrand.Size = new System.Drawing.Size(154, 32);
             this.lblBrand.TabIndex = 1;
             this.lblBrand.Text = "POS System";
             // 
@@ -229,6 +232,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "CONTRUCTION SUPPLY POS SYSTEM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(322, 171);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 29);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -257,6 +270,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

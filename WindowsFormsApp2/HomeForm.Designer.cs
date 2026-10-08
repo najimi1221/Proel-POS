@@ -108,9 +108,9 @@ namespace WindowsFormsApp2
             // pictureBox5
             // 
             this.pictureBox5.Image = global::WindowsFormsApp2.Properties.Resources.settings;
-            this.pictureBox5.Location = new System.Drawing.Point(21, 247);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 234);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox5.Size = new System.Drawing.Size(40, 34);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
@@ -118,7 +118,7 @@ namespace WindowsFormsApp2
             // pictureBox4
             // 
             this.pictureBox4.Image = global::WindowsFormsApp2.Properties.Resources.graph_icon;
-            this.pictureBox4.Location = new System.Drawing.Point(15, 199);
+            this.pictureBox4.Location = new System.Drawing.Point(15, 178);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(37, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,7 +128,7 @@ namespace WindowsFormsApp2
             // pictureBox3
             // 
             this.pictureBox3.Image = global::WindowsFormsApp2.Properties.Resources.Sales;
-            this.pictureBox3.Location = new System.Drawing.Point(15, 146);
+            this.pictureBox3.Location = new System.Drawing.Point(15, 121);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(37, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,7 +138,7 @@ namespace WindowsFormsApp2
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WindowsFormsApp2.Properties.Resources.inventory_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(14, 90);
+            this.pictureBox2.Location = new System.Drawing.Point(14, 66);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(38, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +148,7 @@ namespace WindowsFormsApp2
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.dashboard_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,7 +157,7 @@ namespace WindowsFormsApp2
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(75, 255);
+            this.label4.Location = new System.Drawing.Point(75, 241);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 7;
@@ -166,7 +166,7 @@ namespace WindowsFormsApp2
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(75, 206);
+            this.label3.Location = new System.Drawing.Point(75, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 6;
@@ -175,7 +175,7 @@ namespace WindowsFormsApp2
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(75, 153);
+            this.label2.Location = new System.Drawing.Point(75, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 5;
@@ -184,7 +184,7 @@ namespace WindowsFormsApp2
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(75, 46);
+            this.label1.Location = new System.Drawing.Point(75, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 2;
@@ -272,7 +272,7 @@ namespace WindowsFormsApp2
             this.btnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventory.Location = new System.Drawing.Point(71, 90);
+            this.btnInventory.Location = new System.Drawing.Point(71, 66);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(86, 36);
             this.btnInventory.TabIndex = 1;
@@ -285,9 +285,9 @@ namespace WindowsFormsApp2
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.Controls.Add(this.lblStatus);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(620, 100);
+            this.panel1.Size = new System.Drawing.Size(620, 202);
             this.panel1.TabIndex = 2;
             // 
             // lblWelcome
@@ -303,7 +303,7 @@ namespace WindowsFormsApp2
             // 
             this.lblStatus.Location = new System.Drawing.Point(27, 67);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(75, 20);
+            this.lblStatus.Size = new System.Drawing.Size(75, 24);
             this.lblStatus.TabIndex = 0;
             this.lblStatus.Text = "Status";
             // 
