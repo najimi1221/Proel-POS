@@ -1,0 +1,121 @@
+
+
+-- Create Table
+CREATE TABLE Products (
+    ProductID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Category NVARCHAR(50) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    Stock INT NOT NULL,
+    isDeleted BIT NOT NULL
+);
+
+-- AddProduct
+CREATE PROCEDURE AddProduct
+    @Name NVARCHAR(100),
+    @Category NVARCHAR(50),
+    @Price DECIMAL(10,2),
+    @Stock INT
+AS
+BEGIN
+    INSERT INTO Products (Name, Category, Price, Stock)
+    VALUES (@Name, @Category, @Price, @Stock);
+END;
+
+
+-- hardDeleteProduct
+CREATE PROCEDURE hardDeleteProduct
+    @ProductID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DELETE FROM Products
+    WHERE ProductID = @ProductID;
+END;
+
+
+-- retrieveData
+CREATE PROCEDURE retrieveData
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        ProductID,
+        Name,
+        Category,
+        Price,
+        Stock
+    FROM Products
+    ORDER BY Name;
+END;
+
+
+-- searchProducts
+CREATE PROCEDURE searchProducts
+    @Search NVARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        ProductID,
+        Name,
+        Category,
+        Price,
+        Stock
+    FROM Products
+    WHERE Name LIKE @Search + '%'
+    ORDER BY Name;
+END;
+
+
+-- showDeletedProducts
+CREATE PROCEDURE showDeletedProducts
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        ProductID,
+        Name,
+        Category,
+        Price,
+        Stock
+    FROM Products
+    WHERE IsDeleted = 1
+    ORDER BY Name;
+END;
+
+
+-- softDeleteProduct
+CREATE PROCEDURE softDeleteProduct
+    @ProductID INT
+AS
+BEGIN
+    UPDATE Products
+    SET isDeleted = 1
+    WHERE ProductID = @ProductID;
+END;
+
+
+-- updateProducts
+CREATE PROCEDURE updateProducts
+    @ProductID INT,
+    @Name NVARCHAR(100),
+    @Category NVARCHAR(50),
+    @Price DECIMAL(10,2),
+    @Stock INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Products
+    SET
+        Name = @Name,
+        Category = @Category,
+        Price = @Price,
+        Stock = @Stock
+    WHERE ProductID = @ProductID;
+END;
